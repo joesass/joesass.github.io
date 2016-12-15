@@ -5,8 +5,6 @@ date:   2016-12-12 10:16:50 -0800
 categories: hello world writing
 ---
 
-# The Poetry of Code
-
 >“Language is by its very nature a communal thing; that is, it expresses
 never the exact thing but a compromise—that which is common to
 you, me, and everybody.”
