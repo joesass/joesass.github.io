@@ -35,7 +35,7 @@ We strive to write our code in a way that is readable and pleasurable to the rea
 Well, the above is not actually hard and true. There are many coders who don't really
 care what the code looks like when you try to read it. They just care that it works and gets the job done.
 
-Confession: I was one of those coders.
+Confession: I was (and still might be) one of those coders.
 
 One of the most important habits that Flatiron School
 teaches is how to write beautiful and readable code while also making it functional and robust. It should be a pleasure to read it.
@@ -85,7 +85,9 @@ Let's strive to make our code as poetic and beautiful as possible and write it i
 ## Future Topics
 
 Here are some of the things that I would like to write about in the future:
-- [`Enumerable.each_with_object` and `.index`](/each_with_object)
+
+
+- [`Enumerable.each_with_object` and  `.index`](/each_with_object)
 - Random Topic Generator (gets every page title from the Ruby Docs and selects one at random)
 - Getting started with static sites on Jekyll (this blog)
 - Why you should start using Markdown today
