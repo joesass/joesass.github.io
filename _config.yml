@@ -14,10 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Joe Sasson's Blog
-email: joe.sasson@flatiron-school.com
+email: joe.sasson@flatironschool.com
 description: > # this means to ignore newlines until "baseurl:"
   A blog about the music of coding and my journey to learn and
-  teach it.
+  play it.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: thingifly

@@ -1,12 +1,224 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-07T13:35:57-08:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and teach it.
-</subtitle><entry><title type="html">Welcome to Joe Sasson’s Blog</title><link href="http://localhost:4000/hello/world/2016/12/07/welcome-to-joesass.html" rel="alternate" type="text/html" title="Welcome to Joe Sasson's Blog" /><published>2016-12-07T10:16:50-08:00</published><updated>2016-12-07T10:16:50-08:00</updated><id>http://localhost:4000/hello/world/2016/12/07/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/2016/12/07/welcome-to-joesass.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-19T11:36:44-08:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
+</subtitle><entry><title type="html">Converting Arrays to Hashes (in the desert)</title><link href="http://localhost:4000/ruby/2016/12/16/each-with-object.html" rel="alternate" type="text/html" title="Converting Arrays to Hashes (in the desert)" /><published>2016-12-16T10:16:50-08:00</published><updated>2016-12-16T10:16:50-08:00</updated><id>http://localhost:4000/ruby/2016/12/16/each-with-object</id><content type="html" xml:base="http://localhost:4000/ruby/2016/12/16/each-with-object.html">&lt;p&gt;Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://orig06.deviantart.net/02b1/f/2012/158/0/2/desert_night_sky_by_monkypoo-d52lpy6.jpg&quot; alt=&quot;Desert&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;You stick your hand in your pocket. Out comes an array.&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;using_code_in_examples&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&quot;This will output nicely formatted code snippets&quot;&lt;/span&gt;
+&lt;p&gt;Huh? How did this get into my pocket?&lt;/p&gt;
+
+&lt;p&gt;It doesn’t matter. You are desperate and you have no choice but to look inside the array.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;['food',  'bubble gum', 'weapon', 'AK47', 'vehicle', 'tank', 'another_vehicle', 'lexus', 'more_food', 'sirloin steak']&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Like yeah, these things are helpful but they are not really helpful in an array like that. You need them to be in a hash like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;food&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;bubble gum&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;weapon&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AK47&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;vehicle&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;tank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;another_vehicle&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;lexus&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;more_food&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;sirloin steak&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So now you have to convert your Hash into an Array.&lt;/p&gt;
+
+&lt;p&gt;So you say to yourself, this is easy… and you write a while loop.&lt;/p&gt;
+
+&lt;h3 id=&quot;while-loop&quot;&gt;While Loop&lt;/h3&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;      
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;/div&gt;
+
+&lt;p&gt;So you do this, but you forget to increment the i, and you die of starvation. Oh Well…&lt;/p&gt;
+
+&lt;p&gt;Here’s some of the things you could have done:&lt;/p&gt;
+
+&lt;h3 id=&quot;each-with-index&quot;&gt;Each with Index&lt;/h3&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_index&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is a great way to do it, but it smells a little, because you are creating a hash in memory.&lt;/p&gt;
+
+&lt;p&gt;You can’t have any smell because the animals are hungry and you will attract their attention.&lt;/p&gt;
+
+&lt;p&gt;You can Inject the items into a hash:&lt;/p&gt;
+
+&lt;h3 id=&quot;inject&quot;&gt;Inject&lt;/h3&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This works by taking in an object and iterating through the array and adding the item into the object.&lt;/p&gt;
+
+&lt;h3 id=&quot;each-with-object&quot;&gt;Each with Object&lt;/h3&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({}).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;with_index&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is similar to inject but without having to return the object after each iteration, also you can chain a &lt;code class=&quot;highlighter-rouge&quot;&gt;with_index&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;each_with_object&lt;/code&gt; to make it more concise.&lt;/p&gt;
+
+&lt;p&gt;(Thanks to Ashley and Eric for their help with this one)&lt;/p&gt;
+
+&lt;h3 id=&quot;the-best-way&quot;&gt;The Best Way&lt;/h3&gt;
+
+&lt;p&gt;You are now in heaven and you decide that you would like to&lt;/p&gt;
+
+&lt;p&gt;If only you would have just just googled how to do that..&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=how%20to%20convert%20an%20array%20into%20a%20hash&quot;&gt;How to convert an array to a hash&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You would get the easiest way how to do it.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You go to Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;. You try it and it works! But howww?&lt;/p&gt;
+
+&lt;p&gt;So you look up the documentation for Hash initializer, figuring that would be a good place to start.&lt;/p&gt;
+
+&lt;p&gt;Now you see that you can even do it easier.&lt;/p&gt;
+
+&lt;p&gt;You can initialize a Hash with an array and it will automatically do this for you.&lt;/p&gt;
+
+&lt;p&gt;All you have to is pass the Hash an array inside of brackets:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[ key, value, ... ] → new_hash&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[&quot;a&quot;, 100, &quot;b&quot;, 200]   #=&amp;gt; {&quot;a&quot;=&amp;gt;100, &quot;b&quot;=&amp;gt;200}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So you can pass in any array you want, but there’s still a small problem.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; is expecting an array and you are passing in a whole bunch of arguments. This is breaking the initializer and will not work, but you do have a way to turn all these arguments into one argument: The splat method!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;What this will do is destructure the array and pass it into the Hash initializer as separate arguments.&lt;/p&gt;
+
+&lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T10:16:50-08:00</published><updated>2016-12-12T10:16:50-08:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
+  &lt;p&gt;“Language is by its very nature a communal thing; that is, it expresses
+never the exact thing but a compromise—that which is common to
+you, me, and everybody.”
+—Thomas Ernest Hulme, Speculations&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;writing-about-writing&quot;&gt;Writing about writing&lt;/h2&gt;
+
+&lt;p&gt;There’s so many things to write about it just maddening.
+But, it still seems to be tough to pick out a topic.&lt;/p&gt;
+
+&lt;p&gt;This post will be about writing. Cuz’ y’now, I’m doing it right now and it’s definitely
+something worth writing about.&lt;/p&gt;
+
+&lt;p&gt;Writing things is important to people that are growing. It forces perspective and
+clarification and it lets that crazy voice in your head loose so you can see what it’s doing.&lt;/p&gt;
+
+&lt;h2 id=&quot;writing-poems-in-computer&quot;&gt;Writing poems in Computer&lt;/h2&gt;
+
+&lt;p&gt;We normally think of writing/expression as something that is done in our native language. But the truth is that writing code can be every bit as expressive and creative, if not more so.&lt;/p&gt;
+
+&lt;p&gt;When we code, we express ourselves to a computer and give it instructions, but at the same time we are writing a message to other developers about our thought process on the problem that
+is being solved and also about how the instructions to the computer should be phrased.&lt;/p&gt;
+
+&lt;p&gt;We strive to write our code in a way that is readable and pleasurable to the reader.&lt;/p&gt;
+
+&lt;h2 id=&quot;are-you-really-who-you-think-you-are&quot;&gt;Are you really who you think you are?&lt;/h2&gt;
+
+&lt;p&gt;Well, the above is not actually hard and true. There are many coders who don’t really
+care what the code looks like when you try to read it. They just care that it works and gets the job done.&lt;/p&gt;
+
+&lt;p&gt;Confession: I was (and still might be) one of those coders.&lt;/p&gt;
+
+&lt;p&gt;One of the most important habits that Flatiron School
+teaches is how to write beautiful and readable code while also making it functional and robust. It should be a pleasure to read it.
+At this point we all take for granted that this is something
+important, but I think that it is definitely not always the case with all developers, or even languages (ahem, ahem, javascript).&lt;/p&gt;
+
+&lt;p&gt;I love the fact that we are learning Ruby first.
+Ruby is a beautiful and poetic language, it’s truly a mix of English and Computer and allows a great degree of stylistic freedom.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-about-our-great-human-languages&quot;&gt;What about our great Human Languages?&lt;/h2&gt;
+
+&lt;p&gt;If you’ve witnessed two people who speak different languages try to communicate, you can start to appreciate how difficult it is to create this delicate balance that we are going after.&lt;/p&gt;
+
+&lt;p&gt;I’ve been privy to conversations in Spanish that had a disturbing amount of English
+thrown in, which resulted in a messy Spanglish that really only
+got by through hand motions and multiple repetitions.&lt;/p&gt;
+
+&lt;p&gt;I think my point is that we can view code as a new language, spoken to computers
+and we have the choice to write in ugly prose or write it as sublime verse.&lt;/p&gt;
+
+&lt;p&gt;Until I started with code, I had no access to poetry. But after
+seeing the beautiful things people can write, I believe that we
+as coders are the next generation of poets. And we are doing
+something that hasn’t been done ever before, we’re writing
+poetry in two languages that can be understood by two different species.&lt;/p&gt;
+
+&lt;h2 id=&quot;coding-is-a-high-form-of-creativity&quot;&gt;Coding is a high form of creativity&lt;/h2&gt;
+
+&lt;p&gt;Programming and coding are really outdated terms for what we do.
+All the terms used to describe what developers do are
+misleading.&lt;/p&gt;
+
+&lt;p&gt;I remember having this idea
+of a coder as someone who just sits staring at a screen all day and memorizes
+different commands to give computers. To most non-coders this is probably a pretty accurate picture of what we do.&lt;/p&gt;
+
+&lt;p&gt;We should be called something more along the lines of universal language architects.&lt;/p&gt;
+
+&lt;p&gt;Every time we write a program, we are taking two different languages and making
+something that everyone can understand.&lt;/p&gt;
+
+&lt;p&gt;Let’s strive to make our code as poetic and beautiful as possible and write it in a way that connects and speaks to other developers through our code.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-topics&quot;&gt;Future Topics&lt;/h2&gt;
+
+&lt;p&gt;Here are some of the things that I would like to write about in the future:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/each_with_object&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Enumerable.each_with_object&lt;/code&gt; and  &lt;code class=&quot;highlighter-rouge&quot;&gt;.index&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Random Topic Generator (gets every page title from the Ruby Docs and selects one at random)&lt;/li&gt;
+  &lt;li&gt;Getting started with static sites on Jekyll (this blog)&lt;/li&gt;
+  &lt;li&gt;Why you should start using Markdown today&lt;/li&gt;
+  &lt;li&gt;Useful Tips and Tricks and keyboard shortcuts&lt;/li&gt;
+  &lt;li&gt;Writing a Slack Integration&lt;/li&gt;
+  &lt;li&gt;Doing interesting things with Markov Chains&lt;/li&gt;
+  &lt;li&gt;Cool iterators that you didn’t know about&lt;/li&gt;
+  &lt;li&gt;Top 5 gems that can save you time&lt;/li&gt;
+  &lt;li&gt;Automating every day tasks&lt;/li&gt;
+  &lt;li&gt;Getting started with Markdown&lt;/li&gt;
+  &lt;li&gt;ActiveRecord commands that fire SQL vs ones that don’t&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">“Language is by its very nature a communal thing; that is, it expresses
+never the exact thing but a compromise—that which is common to
+you, me, and everybody.”
+—Thomas Ernest Hulme, Speculations</summary></entry></feed>
