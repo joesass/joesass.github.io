@@ -2,7 +2,7 @@
 layout: post
 title:  "The Poetry of Code"
 date:   2016-12-12 10:16:50 -0800
-categories: hello world writing
+categories: coding
 ---
 
 >“Language is by its very nature a communal thing; that is, it expresses
