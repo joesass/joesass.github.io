@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-19T11:36:44-08:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-19T12:58:34-08:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
 </subtitle><entry><title type="html">Converting Arrays to Hashes (in the desert)</title><link href="http://localhost:4000/ruby/2016/12/16/each-with-object.html" rel="alternate" type="text/html" title="Converting Arrays to Hashes (in the desert)" /><published>2016-12-16T10:16:50-08:00</published><updated>2016-12-16T10:16:50-08:00</updated><id>http://localhost:4000/ruby/2016/12/16/each-with-object</id><content type="html" xml:base="http://localhost:4000/ruby/2016/12/16/each-with-object.html">&lt;p&gt;Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://orig06.deviantart.net/02b1/f/2012/158/0/2/desert_night_sky_by_monkypoo-d52lpy6.jpg&quot; alt=&quot;Desert&quot; /&gt;&lt;/p&gt;
@@ -94,7 +94,9 @@
 
 &lt;h3 id=&quot;the-best-way&quot;&gt;The Best Way&lt;/h3&gt;
 
-&lt;p&gt;You are now in heaven and you decide that you would like to&lt;/p&gt;
+&lt;p&gt;You are now in heaven and you decide that you would like to find the best way to solve this problem..&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://weknowyourdreams.com/images/heaven/heaven-03.jpg&quot; alt=&quot;Heaven&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If only you would have just just googled how to do that..&lt;/p&gt;
 
@@ -112,20 +114,22 @@
 
 &lt;p&gt;You can initialize a Hash with an array and it will automatically do this for you.&lt;/p&gt;
 
-&lt;p&gt;All you have to is pass the Hash an array inside of brackets:&lt;/p&gt;
+&lt;p&gt;All you have to do is pass the Hash an array inside of brackets:&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[ key, value, ... ] → new_hash&lt;/code&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[&quot;a&quot;, 100, &quot;b&quot;, 200]   #=&amp;gt; {&quot;a&quot;=&amp;gt;100, &quot;b&quot;=&amp;gt;200}&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;So you can pass in any array you want, but there’s still a small problem.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; is expecting an array and you are passing in a whole bunch of arguments. This is breaking the initializer and will not work, but you do have a way to turn all these arguments into one argument: The splat method!&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; initializer method of Hash is expecting one argument of an array and you are passing in a whole bunch of arguments. This is breaking the initializer and will not work, but you do have a way to turn all these arguments into one argument: The splat method!&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;What this will do is destructure the array and pass it into the Hash initializer as separate arguments.&lt;/p&gt;
 
-&lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T10:16:50-08:00</published><updated>2016-12-12T10:16:50-08:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
+&lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;
+
+&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T10:16:50-08:00</published><updated>2016-12-12T10:16:50-08:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
   &lt;p&gt;“Language is by its very nature a communal thing; that is, it expresses
 never the exact thing but a compromise—that which is common to
 you, me, and everybody.”

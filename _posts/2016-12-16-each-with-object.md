@@ -109,26 +109,29 @@ If only you would have just just googled how to do that..
 
 [How to convert an array to a hash](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=how%20to%20convert%20an%20array%20into%20a%20hash)
 
-You would get the easiest way how to do it.
+You would get the easiest way to do it.
 
-`Hash[*array.flatten]`
+### Using the Hash Constructor
 
-You go to Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: `Hash[*array.flatten]`. You try it and it works! But howww?
+Your first result is Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: `Hash[*array.flatten]`. You try it and it works! But howww?
 
 So you look up the documentation for Hash initializer, figuring that would be a good place to start.
 
-Now you see that you can even do it easier.
-
-You can initialize a Hash with an array and it will automatically do this for you.
+Hmmm. You can initialize a Hash with multiple arguments and it will automatically do this for you.
 
 All you have to do is pass the Hash an array inside of brackets:
 
-`Hash[ key, value, ... ] → new_hash`
-`Hash["a", 100, "b", 200]   #=> {"a"=>100, "b"=>200}`
+From the [Ruby Docs](https://ruby-doc.org/core-1.8.7/Hash.html#method-c-5B-5D):
 
-So you can pass in any array you want, but there's still a small problem.
+```ruby
+Hash[ key, value, ... ] → new_hash
 
-The `[]` initializer method of Hash is expecting one argument of an array and you are passing in a whole bunch of arguments. This is breaking the initializer and will not work, but you do have a way to turn all these arguments into one argument: The splat method!
+Hash["a", 100, "b", 200]   #=> {"a"=>100, "b"=>200}
+```
+
+So you can pass in any even number of values that you want, but there's still a small problem.
+
+The `[]` initializer method of Hash is expecting a bunch of arguments and you are passing in one array. This is breaking the initializer and will not work, but you do have a way to turn that array into many arguments: The splat method!
 
 `*`
 
