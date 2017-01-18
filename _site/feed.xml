@@ -1,5 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-19T12:58:34-08:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
-</subtitle><entry><title type="html">Converting Arrays to Hashes (in the desert)</title><link href="http://localhost:4000/ruby/2016/12/16/each-with-object.html" rel="alternate" type="text/html" title="Converting Arrays to Hashes (in the desert)" /><published>2016-12-16T10:16:50-08:00</published><updated>2016-12-16T10:16:50-08:00</updated><id>http://localhost:4000/ruby/2016/12/16/each-with-object</id><content type="html" xml:base="http://localhost:4000/ruby/2016/12/16/each-with-object.html">&lt;p&gt;Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-01-18T10:30:20-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
+</subtitle><entry><title type="html">Dr. Jekyll, MD</title><link href="http://localhost:4000/2017/01/17/doctor-jekyll-md.html" rel="alternate" type="text/html" title="Dr. Jekyll, MD" /><published>2017-01-17T00:00:00-05:00</published><updated>2017-01-17T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/17/doctor-jekyll-md</id><content type="html" xml:base="http://localhost:4000/2017/01/17/doctor-jekyll-md.html">&lt;p&gt;What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.&lt;/p&gt;
+
+&lt;p&gt;It was created in 2004 by John Gruber and Aaron Swartz with the purpose of creating a language that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Would enable people to write using an easy-to-read, easy-to-write plain text format, and optionally convert it to structurally valid XHTML/HTML&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We are probably all familiar with markdown from README’s on Github, which supports it’s own flavor of Markdown surprisingly referred to as Github Flavored Markdown.&lt;/p&gt;
+
+&lt;p&gt;The reason it’s called markdown is because it’s similar to HTML markup but without all the annoying tags.&lt;/p&gt;
+
+&lt;h3 id=&quot;headers&quot;&gt;Headers&lt;/h3&gt;
+
+&lt;p&gt;For example, we are all familiar with the good old &lt;code class=&quot;highlighter-rouge&quot;&gt;h1&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;p&gt;Writing a header usually looks something like this:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;I am an important title&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In markdown we would write the same thing like this:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;# I am an important title&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;and it will look like this:&lt;/p&gt;
+
+&lt;h2 id=&quot;i-am-an-important-title&quot;&gt;I am an important title&lt;/h2&gt;
+
+&lt;p&gt;and for each descending header size add another &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;this-is-an-h2&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;h3 id=&quot;this-is-an-h3&quot;&gt;This is an H3&lt;/h3&gt;
+
+&lt;h4 id=&quot;h4&quot;&gt;H4&lt;/h4&gt;
+
+&lt;h5 id=&quot;etc&quot;&gt;etc.&lt;/h5&gt;
+
+&lt;h6 id=&quot;what-the-hell-is-the-point-of-the-h6-tag-its-smaller-than-p-text-has-anybody-ever-actually-used-one-like-why-would-you-want-to-make-a-header-thats-smaller-than-the-paragraph-text-its-barely-even-readable-on-a-regular-screen-damn&quot;&gt;What the hell is the point of the H6 tag? It’s smaller than p text!! Has anybody ever actually used one? Like why would you want to make a header that’s smaller than the paragraph text. It’s barely even readable on a regular screen! Damn.&lt;/h6&gt;
+
+&lt;h3 id=&quot;lists&quot;&gt;Lists&lt;/h3&gt;
+
+&lt;p&gt;One of the coolest things about markdown is how easy it is to make a list, because honestly, who doesn’t love to make lists?&lt;/p&gt;
+
+&lt;p&gt;In order to make a list all you have to do is make bullets using &lt;code class=&quot;highlighter-rouge&quot;&gt;-, *, or +&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Doctor Stuff:
+&lt;span class=&quot;p&quot;&gt;
+-&lt;/span&gt; stethoscope
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; scalpel
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; anasthesia
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will look like this:&lt;/p&gt;
+
+&lt;p&gt;Doctor Stuff:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;stethoscope&lt;/li&gt;
+  &lt;li&gt;scalpel&lt;/li&gt;
+  &lt;li&gt;anasthesia&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can even create nested lists by indenting the bullets:&lt;/p&gt;
+
+&lt;p&gt;Doctor Stuff:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;stethoscope&lt;/li&gt;
+  &lt;li&gt;knives
+    &lt;ul&gt;
+      &lt;li&gt;scalpel&lt;/li&gt;
+      &lt;li&gt;machete&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;anasthesia&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can create blockquotes very easily by adding a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; at the beginning of each line that is part of the quote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This will set the quoted text apart from the rest of your text to show that it is quoted&lt;/p&gt;
+
+&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Another extremely easy thing to do is creating &lt;a href=&quot;http://i.giphy.com/DgLsbUL7SG3kI.gif&quot;&gt;hyperlinks&lt;/a&gt;. All you need to do is surround the word that you want to display with &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; and put the url in an adjacent &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt; like this:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[google](http://www.google.com)&lt;/code&gt; and it will look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot;&gt;google&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are other ways to create links in a footnote style you can read about them &lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax#link&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;images&quot;&gt;Images&lt;/h3&gt;
+
+&lt;p&gt;Inserting images is similarly easy and has a very close syntax, in fact it is the same syntax with a &lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt; in the front:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![alt-text](http://picture.com/awesome-pic.jpg)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a picture of The Starry Night, because it’s awesome!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c=s1200&quot; alt=&quot;starry-night&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;code-formatting-and-code-fences&quot;&gt;Code formatting and Code Fences&lt;/h3&gt;
+
+&lt;p&gt;Perhaps the most useful part of markdown for programmers like us is the way it handles code. All we need in order to turn an inline string into code formatting is to surround the string with backticks:&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I just woke up to find &lt;span class=&quot;sb&quot;&gt;`some weird code`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and this is what it looks like:&lt;/p&gt;
+
+&lt;p&gt;I just woke up to find &lt;code class=&quot;highlighter-rouge&quot;&gt;some weird code&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Even cooler than inline code formatting are code fences.&lt;/p&gt;
+
+&lt;p&gt;A code fence is a full block of code surrounded by a “fence” of 3 backticks
+before and three backticks after:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://snag.gy/CJxY9l.jpg&quot; alt=&quot;code-block&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code block
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://snag.gy/bL8dkX.jpg&quot; alt=&quot;ruby-block&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Whats extra cool about this one is that most renderers preserve&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# syntax highlighting if you specify a language&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Awesome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Fantastic&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;great&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@great&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;great&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;output&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Isn't this &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@great&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;?&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;text-editors&quot;&gt;Text Editors&lt;/h3&gt;
+
+&lt;p&gt;The greatest part of markdown is that it doesn’t need any specific text editor in order to write it, because it is all in plain text. But, there are editors that add features and make it easy to preview and understand it better.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://macdown.uranusjr.com/&quot;&gt;Macdown&lt;/a&gt; is a cool one that gives you a split pane preview&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; is my favorite choice with a few packages that make it even better
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/markdown-writer&quot;&gt;markdown-writer&lt;/a&gt; this adds a lot of nifty features like automatically creating bullet points when you press enter&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://atom.io/packages/markdown-preview&quot;&gt;markdown-preview&lt;/a&gt; you can preview the rendered markdown by pressing control-shift-m&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To start writing a markdown file, all you have to do is create a new file with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; extension, start typing, and your file will automatically be rendered as markdown by browsers.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-jekyll&quot;&gt;What is Jekyll?&lt;/h3&gt;
+
+&lt;p&gt;This blog is being powered by &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and all it does is take my markdown files and created a nice looking and working site out of it. Officially it’s a static site generator which means it can do a lot more than just blogs, but for my purposes blogs are enough.&lt;/p&gt;
+
+&lt;p&gt;Some of the useful features are the template engines and the themes that you can use. Also the way it structures URL’s is based on tags which can allow you to categorize your posts. Most posts include a header with some YAML in it that includes metadata, for example:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Dr. Jekyll, MD&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I’m still new to Jekyll so hopefully I can pick up some more tricks and write about them in a later blog post.
+But for now the basics are good enough for me.&lt;/p&gt;
+
+&lt;h3 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h3&gt;
+
+&lt;p&gt;Another great resource that I found when starting the blog was github pages which allows you to host a static site for free under your github username using your github repo.
+The instructions to get it set up are very easy and clear and it takes about 10 minutes. &lt;a href=&quot;https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/&quot;&gt;Getting Started With Jekyll + Github Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Other Links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Daring Fireball Official Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;</content><summary type="html">What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.</summary></entry><entry><title type="html">Converting Arrays to Hashes (in the desert)</title><link href="http://localhost:4000/ruby/2016/12/16/each-with-object.html" rel="alternate" type="text/html" title="Converting Arrays to Hashes (in the desert)" /><published>2016-12-16T13:16:50-05:00</published><updated>2016-12-16T13:16:50-05:00</updated><id>http://localhost:4000/ruby/2016/12/16/each-with-object</id><content type="html" xml:base="http://localhost:4000/ruby/2016/12/16/each-with-object.html">&lt;p&gt;Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://orig06.deviantart.net/02b1/f/2012/158/0/2/desert_night_sky_by_monkypoo-d52lpy6.jpg&quot; alt=&quot;Desert&quot; /&gt;&lt;/p&gt;
 
@@ -102,26 +287,29 @@
 
 &lt;p&gt;&lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=how%20to%20convert%20an%20array%20into%20a%20hash&quot;&gt;How to convert an array to a hash&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;You would get the easiest way how to do it.&lt;/p&gt;
+&lt;p&gt;You would get the easiest way to do it.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;using-the-hash-constructor&quot;&gt;Using the Hash Constructor&lt;/h3&gt;
 
-&lt;p&gt;You go to Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;. You try it and it works! But howww?&lt;/p&gt;
+&lt;p&gt;Your first result is Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;. You try it and it works! But howww?&lt;/p&gt;
 
 &lt;p&gt;So you look up the documentation for Hash initializer, figuring that would be a good place to start.&lt;/p&gt;
 
-&lt;p&gt;Now you see that you can even do it easier.&lt;/p&gt;
-
-&lt;p&gt;You can initialize a Hash with an array and it will automatically do this for you.&lt;/p&gt;
+&lt;p&gt;Hmmm. You can initialize a Hash with multiple arguments and it will automatically do this for you.&lt;/p&gt;
 
 &lt;p&gt;All you have to do is pass the Hash an array inside of brackets:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[ key, value, ... ] → new_hash&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[&quot;a&quot;, 100, &quot;b&quot;, 200]   #=&amp;gt; {&quot;a&quot;=&amp;gt;100, &quot;b&quot;=&amp;gt;200}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;From the &lt;a href=&quot;https://ruby-doc.org/core-1.8.7/Hash.html#method-c-5B-5D&quot;&gt;Ruby Docs&lt;/a&gt;:&lt;/p&gt;
 
-&lt;p&gt;So you can pass in any array you want, but there’s still a small problem.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_hash&lt;/span&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; initializer method of Hash is expecting one argument of an array and you are passing in a whole bunch of arguments. This is breaking the initializer and will not work, but you do have a way to turn all these arguments into one argument: The splat method!&lt;/p&gt;
+&lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; {&quot;a&quot;=&amp;gt;100, &quot;b&quot;=&amp;gt;200}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So you can pass in any even number of values that you want, but there’s still a small problem.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; initializer method of Hash is expecting a bunch of arguments and you are passing in one array. This is breaking the initializer and will not work, but you do have a way to turn that array into many arguments: The splat method!&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
 
@@ -129,7 +317,7 @@
 
 &lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;
 
-&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T10:16:50-08:00</published><updated>2016-12-12T10:16:50-08:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
+&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T13:16:50-05:00</published><updated>2016-12-12T13:16:50-05:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
   &lt;p&gt;“Language is by its very nature a communal thing; that is, it expresses
 never the exact thing but a compromise—that which is common to
 you, me, and everybody.”
