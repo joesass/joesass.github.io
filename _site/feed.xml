@@ -1,5 +1,143 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-01-26T09:37:32-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of coding and my journey to learn and play it.
-</subtitle><entry><title type="html">Javascript Closures</title><link href="http://localhost:4000/2017/01/25/javascript-closures.html" rel="alternate" type="text/html" title="Javascript Closures" /><published>2017-01-25T00:00:00-05:00</published><updated>2017-01-25T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/25/javascript-closures</id><content type="html" xml:base="http://localhost:4000/2017/01/25/javascript-closures.html">&lt;h3 id=&quot;why-should-i-care-about-closures&quot;&gt;Why should I care about Closures?&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-07T10:25:12-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">Javascript Events</title><link href="http://localhost:4000/2017/02/07/javascript-events.html" rel="alternate" type="text/html" title="Javascript Events" /><published>2017-02-07T00:00:00-05:00</published><updated>2017-02-07T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/07/javascript-events</id><content type="html" xml:base="http://localhost:4000/2017/02/07/javascript-events.html">&lt;p&gt;When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?&lt;/p&gt;
+
+&lt;p&gt;Boy was I wrong.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/LwQIwLX.jpg&quot; alt=&quot;It will be fun they said&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Events are anything but a party, to understand and to implement, and besides, I never seem to get invited to the cool ones.&lt;/p&gt;
+
+&lt;p&gt;So as some form of revenge I decided that I would try to understand them and what makes them tick, so that I can be one of the cool kids again.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-are-events-important&quot;&gt;Why are Events important?&lt;/h2&gt;
+
+&lt;p&gt;One of the main reasons javascript was invented and added to the browser is because we wanted to give the user a way to interact with our plain old HTML.&lt;/p&gt;
+
+&lt;p&gt;We had a problem though.&lt;/p&gt;
+
+&lt;p&gt;How are we supposed to know when a user does something?&lt;/p&gt;
+
+&lt;p&gt;Well, we do have the user’s input devices(keyboard, mouse, etc.) so why not receive input from those devices and then so stuff with that.&lt;/p&gt;
+
+&lt;p&gt;How will we get that information from the input devices?&lt;/p&gt;
+
+&lt;p&gt;We can keep asking the inputs if they have anything for us, but we would have to do this many times a second for every input device. This technique is called &lt;em&gt;polling&lt;/em&gt;, and as you can imagine it is not the most efficient solution.&lt;/p&gt;
+
+&lt;p&gt;Also, what if the user doesn’t do something right away, but rather after a little while, like let’s say click a button to say they liked an article. Or what if there were 5 different clicks on different parts of the page, or 3 keys being pressed at once, how do we handle this information?&lt;/p&gt;
+
+&lt;p&gt;Also, what if want to do something in our program based on an input, but that thing takes us a long time. Should we stop the page completely until the task finishes? What if the user wants to continue reading the page or interacting with it somewhere else?&lt;/p&gt;
+
+&lt;h2 id=&quot;asynchronicity-and-events&quot;&gt;Asynchronicity and Events&lt;/h2&gt;
+
+&lt;p&gt;In order to solve these problems, javascript has two ideas that play into each other. One is asynchronicity, which means that our code does not execute in a straight line, but rather gets piled onto a big &lt;code class=&quot;highlighter-rouge&quot;&gt;event loop&lt;/code&gt; or queue and gets executed when its’ the first in line.&lt;/p&gt;
+
+&lt;p&gt;For example, we have something called &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; which takes in a function and a number of milliseconds, and adds that function to the event loop to be executed after those milliseconds elapse.&lt;/p&gt;
+
+&lt;p&gt;Similarly we can tell our program that we want to add a certain function to be executed when it receives a specific event from a certain part of our page.&lt;/p&gt;
+
+&lt;p&gt;Events are then added to a queue, which is how the brits say line, and we can execute our functions in order that the events were received in the queue. This way we don’t need to listen for every single user input but rather wait for it in our queue. Neat!&lt;/p&gt;
+
+&lt;h2 id=&quot;event-types&quot;&gt;Event Types&lt;/h2&gt;
+
+&lt;p&gt;At it’s core an Event is simply an object.&lt;/p&gt;
+
+&lt;p&gt;What type of object?&lt;/p&gt;
+
+&lt;p&gt;A Javascript object.&lt;/p&gt;
+
+&lt;p&gt;They are nothing special. In fact you can make one by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; keyword just like any other object.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; Event { isTrusted: false, type: 'click', etc.}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then you can &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch&lt;/code&gt; the event using &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatchEvent()&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;At this point nothing will happen because we haven’t told our program to listen for this type of event.&lt;/p&gt;
+
+&lt;p&gt;We can do this by adding a listener to a certain element on our page.&lt;/p&gt;
+
+&lt;p&gt;This will add the particular Event object to the &lt;code class=&quot;highlighter-rouge&quot;&gt;event loop&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This object is being passed into our program either through the DOM(most of the time) or through our code, and that notifies our program that we should do something now.&lt;/p&gt;
+
+&lt;h2 id=&quot;listeners&quot;&gt;Listeners&lt;/h2&gt;
+
+&lt;p&gt;There are events happening on our page every second, every time someone hovers over an element, clicks their mouse or even moves there mouse, or presses a key on their keyboard, a message is being sent through the DOM into our program with a whole bunch of information attached.&lt;/p&gt;
+
+&lt;p&gt;So why doesn’t our program do anything with all this information? Why are we not constantly seeing changes to our page?&lt;/p&gt;
+
+&lt;p&gt;The answer is Event Listeners. What these do is tell our page, or an element in our page to &lt;em&gt;listen&lt;/em&gt; for a certain event, and then do something when it receives that message.&lt;/p&gt;
+
+&lt;p&gt;Continuing our example above, we can add an event listener by calling the &lt;code class=&quot;highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt; function provided by javascript on an element of our page and passing in the event type i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;click&lt;/code&gt; and the function that we want to execute when we do receive that event, also known as a callback function.&lt;/p&gt;
+
+&lt;h2 id=&quot;handlers&quot;&gt;Handlers&lt;/h2&gt;
+
+&lt;p&gt;What should we do when we receive one of these Events? Well that’s what the EventHandler is for. After telling our element to listen for an event we want to tell it what to do, and we do that in the form of passing in a function as the second argument to the listener function.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'clickeroooo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now when we dispatch our click event, our event will get added to the event loop and will get called when it is first in line.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// -&amp;gt; clickeroooo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;bubbling&quot;&gt;Bubbling&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.giphy.com/8FpRXTv389suQ.gif&quot; alt=&quot;Bubbles&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the interesting things about Events is that they bubble up through the DOM. What this means is that if we have a nested element like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And we add a click handler to both of them:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'parent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am your faaaaather'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'child'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Noooooooo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://codepen.io/dibson/pen/vgaMvR?editors=1111&quot;&gt;Try this example on Codepen&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;When someone clicks on the child element, the parent element will also register a click and fire it’s callback. This is a property that can be set when creating an event and by default on a click event it’s set to true.&lt;/p&gt;
+
+&lt;h2 id=&quot;capturing&quot;&gt;Capturing&lt;/h2&gt;
+
+&lt;p&gt;Another interesting thing about events is that they don’t actually originate where they occurred. They always start at the root of the document and then look down through the DOM tree in order to determine what the target of the event was. This process is called capturing. In fact the bubbling itself goes all the way back to the root of the document and fires the handlers for all nodes that have a listener.&lt;/p&gt;
+
+&lt;h2 id=&quot;target-and-currenttarget&quot;&gt;Target and CurrentTarget&lt;/h2&gt;
+
+&lt;p&gt;We mentioned a target, but what does this mean?&lt;/p&gt;
+
+&lt;p&gt;Simply put, a target is the node from which the event originated. As we saw before, this is not a trivial thing for the DOM to figure out, as all events fundamentally start at the root and are captured later on. When the DOM does find out who triggered it, it sets that element as the &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt; property of the event. Another useful property of an event is the &lt;code class=&quot;highlighter-rouge&quot;&gt;currentTarget&lt;/code&gt; property which is useful when an event is bubbling through the DOM. It will give us the element that is currently calling its listener.&lt;/p&gt;
+
+&lt;h2 id=&quot;default-behaviors&quot;&gt;Default Behaviors&lt;/h2&gt;
+
+&lt;p&gt;There are default functions that fire for certain events. For example, if someone clicks a link, the browser will redirect to that URL and send off a request. Similarly, when someone submits a form, the browser will send a POST request with the inputs as params. In order to stop this behavior we need to specify that want to &lt;code class=&quot;highlighter-rouge&quot;&gt;preventDefault()&lt;/code&gt; in our handler callback.&lt;/p&gt;
+
+&lt;p&gt;Cool Links:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kirupa.com/html5/event_capturing_bubbling_javascript.htm&quot;&gt;Event Capturing and Bubbling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop&quot;&gt;MDN Event Loop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://eloquentjavascript.net/14_event.html&quot;&gt;Eloquent Javascript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?</summary></entry><entry><title type="html">Javascript Closures</title><link href="http://localhost:4000/2017/01/25/javascript-closures.html" rel="alternate" type="text/html" title="Javascript Closures" /><published>2017-01-25T00:00:00-05:00</published><updated>2017-01-25T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/25/javascript-closures</id><content type="html" xml:base="http://localhost:4000/2017/01/25/javascript-closures.html">&lt;h3 id=&quot;why-should-i-care-about-closures&quot;&gt;Why should I care about Closures?&lt;/h3&gt;
 
 &lt;p&gt;If you want some motivation to learn closures, maybe you should take a look at what some of the public voices are saying about it.&lt;/p&gt;
 
