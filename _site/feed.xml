@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-09T14:51:40-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-09T16:08:00-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
 </subtitle><entry><title type="html">Javascript Events</title><link href="http://localhost:4000/2017/02/07/javascript-events.html" rel="alternate" type="text/html" title="Javascript Events" /><published>2017-02-07T00:00:00-05:00</published><updated>2017-02-07T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/07/javascript-events</id><content type="html" xml:base="http://localhost:4000/2017/02/07/javascript-events.html">&lt;p&gt;When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?&lt;/p&gt;
 
 &lt;p&gt;Boy was I wrong.&lt;/p&gt;
@@ -650,7 +650,7 @@ The instructions to get it set up are very easy and clear and it takes about 10 
 
 &lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;
 
-&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T13:16:50-05:00</published><updated>2016-12-12T13:16:50-05:00</updated><id>http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/hello/world/writing/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
+&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T13:16:50-05:00</published><updated>2016-12-12T13:16:50-05:00</updated><id>http://localhost:4000/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
   &lt;p&gt;“Language is by its very nature a communal thing; that is, it expresses
 never the exact thing but a compromise—that which is common to
 you, me, and everybody.”
@@ -743,7 +743,7 @@ something that everyone can understand.&lt;/p&gt;
   &lt;li&gt;Automating every day tasks&lt;/li&gt;
   &lt;li&gt;Getting started with Markdown&lt;/li&gt;
   &lt;li&gt;ActiveRecord commands that fire SQL vs ones that don’t&lt;/li&gt;
-&lt;/ul&gt;</content><summary type="html">“Language is by its very nature a communal thing; that is, it expresses
+&lt;/ul&gt;</content><category term="hello" /><category term="world" /><category term="writing" /><summary type="html">“Language is by its very nature a communal thing; that is, it expresses
 never the exact thing but a compromise—that which is common to
 you, me, and everybody.”
 —Thomas Ernest Hulme, Speculations</summary></entry></feed>

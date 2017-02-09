@@ -31,3 +31,6 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+disqus:
+    shortname: https-joesasson-github-io
+google_analytics: UA-91721303-1
