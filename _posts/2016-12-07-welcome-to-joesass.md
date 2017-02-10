@@ -100,3 +100,7 @@ Here are some of the things that I would like to write about in the future:
 - Automating every day tasks
 - Getting started with Markdown
 - ActiveRecord commands that fire SQL vs ones that don't
+
+{% if site.disqus_shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
