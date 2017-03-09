@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Projects</title>
-  <meta name="description" content="A blog about the music of code and my journey to learn and play it.">
+  <title>9 Must Know Tips for Google Chrome Dev Tools</title>
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/projects.html">
+  <link rel="canonical" href="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html">
   <link rel="alternate" type="application/rss+xml" title="Joe Sasson&#39;s Blog" href="/feed.xml">
   
   
@@ -62,19 +62,63 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Projects</h1>
+    <h1 class="post-title" itemprop="name headline">9 Must Know Tips for Google Chrome Dev Tools</h1>
+    <p class="post-meta"><time datetime="2017-03-09T00:00:00-05:00" itemprop="datePublished">Mar 9, 2017</time></p>
   </header>
 
-  <div class="post-content">
-    <p>These are the projects that I’ve worked on throughout the past year or so…</p>
+  <div class="post-content" itemprop="articleBody">
+    <p><img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89059.jpg" alt="Chrome" /></p>
 
-<p><a href="http://thegreatunknown.tk">The Great Unknown</a></p>
+<p>Google Chrome’s Dev Tools is one of the most powerful debugging tools ever made. If you are developing any type of front end web application, you will inevitably be using it to debug your app.</p>
+
+<p>I personally prefer it whenever possible over other debugging tools.</p>
+
+<p>Here are some of the tips and tricks I’ve discovered while recently writing my apps <a href="http://metromeets.co">metromeets</a> and <a href="https://joesasson.github.io/anjou/">anjou</a>:</p>
+
+<h3 id="key-symbol-table">Key Symbol Table</h3>
+
+<ul>
+  <li>Command ⌘</li>
+  <li>Shift ⇧</li>
+  <li>Option ⌥</li>
+  <li>Control ⌃</li>
+</ul>
+
+<h2 id="the-goods">The Goods</h2>
+
+<p>1) Quickly open devtools by pressing ⌘-⌥-I - this will open the first tab of devtools (which you can switch around by dragging and dropping). <a href="https://developers.google.com/web/tools/chrome-devtools/shortcuts">More Info</a></p>
+
+<p>2) Quickly get to the console by pressing ⌘-⌥-J. <a href="https://developers.google.com/web/tools/chrome-devtools/shortcuts">More Info</a></p>
+
+<p>3) Enable dark theme by going to the settings panel which is under the main menu (3 dots symbol). Under the heading Appearance select “Dark” from the dropdown menu. This is surprisingly hard for most people to figure out.</p>
+
+<p><img src="https://snag.gy/juzqXK.jpg" alt="Dark Theme" /></p>
+
+<p>4) ⌘-P will activate fuzzy file search which lets you find any file in your project really quickly in order to preview or set breakpoints.</p>
+
+<p>5) ⌘-⇧-F will search all your files for a given string or regex expression.</p>
+
+<p>6) In the console, you can use jQuery style selectors with a slight variation. <code class="highlighter-rouge">$()</code> will select the first matching element and <code class="highlighter-rouge">$$()</code> will select all matching elements. <a href="https://developers.google.com/web/tools/chrome-devtools/console/expressions">More Info</a></p>
+
+<p>7) <code class="highlighter-rouge">$_</code> returns the most recently evaluated expression. Very useful for when you write out an expression but forget to set it to a variable.</p>
+
+<p>8) ⌘-⇧-C will enable an inspect feature that will show selector information, css spacing info, and will scroll element into view in the elements panel of the dev tools. This can also be accessed by clicking on the <img src="https://snag.gy/mrXau4.jpg" alt="icon" /> icon.</p>
+
+<p>9) ⌘-⇧-M Will toggle device emulation which allows you to preview what your page will look like on a mobile device. You can choose from a number of different devices by clicking on the dropdown menu on top of the emulation. This can also be accessed by clicking on the <img src="https://snag.gy/O6yVIh.jpg" alt="em-icon" /> icon.</p>
+
+<p>That’s it for now! I am sure there are so many more. If you know of a trick that you just have to share, please leave it in the comments section below.</p>
+
+<p>Thanks for reading!</p>
 
   </div>
 
+  
+    
+
+  
 </article>
 
       </div>

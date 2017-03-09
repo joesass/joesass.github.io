@@ -3,4 +3,6 @@ layout: page
 title: Projects
 ---
 
-Coming Soon...
+These are the projects that I've worked on throughout the past year or so...
+
+[The Great Unknown](http://thegreatunknown.tk)

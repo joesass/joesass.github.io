@@ -1,5 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-03T12:50:12-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">The problem that Redux solves in one simple example</title><link href="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html" rel="alternate" type="text/html" title="The problem that Redux solves in one simple example" /><published>2017-03-03T00:00:00-05:00</published><updated>2017-03-03T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example</id><content type="html" xml:base="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html">&lt;p&gt;After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called &lt;a href=&quot;https://joesasson.github.io/anjou/&quot;&gt;anjou&lt;/a&gt; using those libraries and principles.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-09T15:29:29-05:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">9 Must Know Tips for Google Chrome Dev Tools</title><link href="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html" rel="alternate" type="text/html" title="9 Must Know Tips for Google Chrome Dev Tools" /><published>2017-03-09T00:00:00-05:00</published><updated>2017-03-09T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools</id><content type="html" xml:base="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html">&lt;p&gt;&lt;img src=&quot;https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89059.jpg&quot; alt=&quot;Chrome&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Chrome’s Dev Tools is one of the most powerful debugging tools ever made. If you are developing any type of front end web application, you will inevitably be using it to debug your app.&lt;/p&gt;
+
+&lt;p&gt;I personally prefer it whenever possible over other debugging tools.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the tips and tricks I’ve discovered while recently writing my apps &lt;a href=&quot;http://metromeets.co&quot;&gt;metromeets&lt;/a&gt; and &lt;a href=&quot;https://joesasson.github.io/anjou/&quot;&gt;anjou&lt;/a&gt;:&lt;/p&gt;
+
+&lt;h3 id=&quot;key-symbol-table&quot;&gt;Key Symbol Table&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Command ⌘&lt;/li&gt;
+  &lt;li&gt;Shift ⇧&lt;/li&gt;
+  &lt;li&gt;Option ⌥&lt;/li&gt;
+  &lt;li&gt;Control ⌃&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-goods&quot;&gt;The Goods&lt;/h2&gt;
+
+&lt;p&gt;1) Quickly open devtools by pressing ⌘-⌥-I - this will open the first tab of devtools (which you can switch around by dragging and dropping). &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/shortcuts&quot;&gt;More Info&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) Quickly get to the console by pressing ⌘-⌥-J. &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/shortcuts&quot;&gt;More Info&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3) Enable dark theme by going to the settings panel which is under the main menu (3 dots symbol). Under the heading Appearance select “Dark” from the dropdown menu. This is surprisingly hard for most people to figure out.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://snag.gy/juzqXK.jpg&quot; alt=&quot;Dark Theme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4) ⌘-P will activate fuzzy file search which lets you find any file in your project really quickly in order to preview or set breakpoints.&lt;/p&gt;
+
+&lt;p&gt;5) ⌘-⇧-F will search all your files for a given string or regex expression.&lt;/p&gt;
+
+&lt;p&gt;6) In the console, you can use jQuery style selectors with a slight variation. &lt;code class=&quot;highlighter-rouge&quot;&gt;$()&lt;/code&gt; will select the first matching element and &lt;code class=&quot;highlighter-rouge&quot;&gt;$$()&lt;/code&gt; will select all matching elements. &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/console/expressions&quot;&gt;More Info&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;7) &lt;code class=&quot;highlighter-rouge&quot;&gt;$_&lt;/code&gt; returns the most recently evaluated expression. Very useful for when you write out an expression but forget to set it to a variable.&lt;/p&gt;
+
+&lt;p&gt;8) ⌘-⇧-C will enable an inspect feature that will show selector information, css spacing info, and will scroll element into view in the elements panel of the dev tools. This can also be accessed by clicking on the &lt;img src=&quot;https://snag.gy/mrXau4.jpg&quot; alt=&quot;icon&quot; /&gt; icon.&lt;/p&gt;
+
+&lt;p&gt;9) ⌘-⇧-M Will toggle device emulation which allows you to preview what your page will look like on a mobile device. You can choose from a number of different devices by clicking on the dropdown menu on top of the emulation. This can also be accessed by clicking on the &lt;img src=&quot;https://snag.gy/O6yVIh.jpg&quot; alt=&quot;em-icon&quot; /&gt; icon.&lt;/p&gt;
+
+&lt;p&gt;That’s it for now! I am sure there are so many more. If you know of a trick that you just have to share, please leave it in the comments section below.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;</content><category term="chrome" /><category term="devtools" /><summary type="html"></summary></entry><entry><title type="html">The problem that Redux solves in one simple example</title><link href="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html" rel="alternate" type="text/html" title="The problem that Redux solves in one simple example" /><published>2017-03-03T00:00:00-05:00</published><updated>2017-03-03T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example</id><content type="html" xml:base="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html">&lt;p&gt;After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called &lt;a href=&quot;https://joesasson.github.io/anjou/&quot;&gt;anjou&lt;/a&gt; using those libraries and principles.&lt;/p&gt;
 
 &lt;p&gt;The app has a few very basic capabilities(for now):
   - Take in a name and add it to a list
