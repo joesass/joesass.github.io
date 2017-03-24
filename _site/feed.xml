@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-15T21:01:45-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">Sorting Objects Through their Properties Numerically with Javascript - How it Works</title><link href="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html" rel="alternate" type="text/html" title="Sorting Objects Through their Properties Numerically with Javascript - How it Works" /><published>2017-03-15T00:00:00-04:00</published><updated>2017-03-15T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works</id><content type="html" xml:base="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html">&lt;p&gt;Recently, when writing the code for my (as of yet unpublished) chrome extension, &lt;a href=&quot;https://github.com/joesasson/historian&quot;&gt;Historian&lt;/a&gt;, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-24T17:55:00-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">Setting up a Rails App with Rspec and Postgres</title><link href="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html" rel="alternate" type="text/html" title="Setting up a Rails App with Rspec and Postgres" /><published>2017-03-24T00:00:00-04:00</published><updated>2017-03-24T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres</id><content type="html" xml:base="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html">&lt;p&gt;I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github &lt;a href=&quot;https://github.com/joesasson/hava-amina&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While running &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt; I realized that I actually wanted to change certain things.&lt;/p&gt;
+
+&lt;p&gt;First of all, I recently started learning TDD with &lt;a href=&quot;https://leanpub.com/everydayrailsrspec&quot;&gt;Everyday Rails Testing with Rspec&lt;/a&gt; and I’m loving the readability and organization of the specs that they show. So I wanted to use rspec in my app instead of the default minitest.&lt;/p&gt;
+
+&lt;p&gt;Also, I wanted to use postgresql for my database instead of the default sqlite3 because I normally deploy with &lt;a href=&quot;`https://heroku.com`&quot;&gt;heroku&lt;/a&gt; which is easy, free, and fast. Heroku does not support sqlite3 databases, so it’s always a hassle to go into the config files and change it yourself and make sure you’re getting everything right.&lt;/p&gt;
+
+&lt;p&gt;So I did a little poking around and I found in a &lt;a href=&quot;http://julianveling.com/?p=18&quot;&gt;blog post&lt;/a&gt; that there is a command line argument I can pass to &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt; in order to use pg as a database and another one to remove the default test framework.&lt;/p&gt;
+
+&lt;p&gt;Here is the one line command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails new app-name -T -d postgresql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;-T&lt;/code&gt; will skip the testing framework altogether, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-d postgresql&lt;/code&gt; will set postgres as the db.&lt;/p&gt;
+
+&lt;p&gt;Now, in order to use rspec, all I need to do is add &lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'rspec'&lt;/code&gt; to the Gemfile in the test and development group and &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then, to generate the folders and files and helpers for the project, run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails generate:rspec
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will add the &lt;code class=&quot;highlighter-rouge&quot;&gt;spec&lt;/code&gt; folder along with the &lt;code class=&quot;highlighter-rouge&quot;&gt;rails_helper&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;spec_helper&lt;/code&gt; and also&lt;code class=&quot;highlighter-rouge&quot;&gt;.rspec&lt;/code&gt; file in the main directory.&lt;/p&gt;
+
+&lt;p&gt;I normally add &lt;code class=&quot;highlighter-rouge&quot;&gt;--format documentation&lt;/code&gt; when running rspec in order to see a description of the test as it’s running instead of just a dot. If I want this option every time I run rspec, I can add it to the &lt;code class=&quot;highlighter-rouge&quot;&gt;.rspec&lt;/code&gt; file that was generated.&lt;/p&gt;
+
+&lt;p&gt;Now my app is perfect, but I know that I want this configuration for the next time I want to set up a new rails app and the time after that and so on. Is there a way that I can just run this setup every time?&lt;/p&gt;
+
+&lt;p&gt;I discovered through some nice &lt;a href=&quot;https://richonrails.com/articles/customizing-the-rails-app-generator&quot;&gt;blog post&lt;/a&gt;&lt;a href=&quot;https://www.benpickles.com/articles/64-my-dot-railsrc&quot;&gt;s&lt;/a&gt; that there is a file called &lt;code class=&quot;highlighter-rouge&quot;&gt;.railsrc&lt;/code&gt; that does something similar to what the &lt;code class=&quot;highlighter-rouge&quot;&gt;.rspec&lt;/code&gt; file does above. It passes in whatever command line arguments you define in it every time you call &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt;. You can edit it by calling &lt;code class=&quot;highlighter-rouge&quot;&gt;atom ~/.railsrc&lt;/code&gt; (or whatever editor you prefer) from any directory in your command line.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day my &lt;code class=&quot;highlighter-rouge&quot;&gt;.railsrc&lt;/code&gt; file looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.railsrc&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-T
+-d postgresql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are other ways of customizing more fully using rails templates (in blog post linked above), but ultimately I decided I can do that later, because I’m lazy.&lt;/p&gt;
+
+&lt;p&gt;Now, every time I run &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt;, I get postgres and no minitest. 🔥🔥🔥&lt;/p&gt;
+
+&lt;p&gt;Now for some words from my 7 month old son:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:
+''
+...........]];;;                        CBBEA
+'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thanks Mo!&lt;/p&gt;</content><summary type="html">I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github here.</summary></entry><entry><title type="html">Sorting Objects Through their Properties Numerically with Javascript - How it Works</title><link href="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html" rel="alternate" type="text/html" title="Sorting Objects Through their Properties Numerically with Javascript - How it Works" /><published>2017-03-15T00:00:00-04:00</published><updated>2017-03-15T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works</id><content type="html" xml:base="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html">&lt;p&gt;Recently, when writing the code for my (as of yet unpublished) chrome extension, &lt;a href=&quot;https://github.com/joesasson/historian&quot;&gt;Historian&lt;/a&gt;, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.&lt;/p&gt;
 
 &lt;p&gt;I was trying to sort an array of javascript objects by the value of one of the properties. Here is an example:&lt;/p&gt;
 
