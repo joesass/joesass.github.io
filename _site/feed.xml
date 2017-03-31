@@ -1,5 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-24T17:55:00-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">Setting up a Rails App with Rspec and Postgres</title><link href="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html" rel="alternate" type="text/html" title="Setting up a Rails App with Rspec and Postgres" /><published>2017-03-24T00:00:00-04:00</published><updated>2017-03-24T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres</id><content type="html" xml:base="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html">&lt;p&gt;I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github &lt;a href=&quot;https://github.com/joesasson/hava-amina&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-31T15:08:49-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">Putting the Oh! in Oauth</title><link href="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html" rel="alternate" type="text/html" title="Putting the Oh! in Oauth" /><published>2017-03-31T00:00:00-04:00</published><updated>2017-03-31T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/31/putting-the-oh-in-oauth</id><content type="html" xml:base="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html">&lt;p&gt;If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/8xHQoMpEXa45q/giphy.gif&quot; alt=&quot;im-doctor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is for this reason that we implement a authentication system for all of our apps.
+There are many ways to implement this system. The most basic being writing it yourself and using bcrypt to encrypt the password. That’s the most basic authentication possible, but it works perfectly fine.&lt;/p&gt;
+
+&lt;p&gt;In the “basic” way, the user simply puts in their unique username and enters a password, which gets encrypted and stored in our database, and we can run the same encryption on it to compare it with what we have in our database, and let the user in if it matches.&lt;/p&gt;
+
+&lt;p&gt;There is however another, more complicated way to verify your users’ identities called Oauth.&lt;/p&gt;
+
+&lt;p&gt;Why would anybody want to do things the more complicated way? Aren’t all programmers lazy?&lt;/p&gt;
+
+&lt;p&gt;The answer is, we do it for our users.&lt;/p&gt;
+
+&lt;p&gt;When trying to get someone to sign up for your site, besides for actually getting them to want your product or service, there are another few hurdles to overcome.
+- Many people signing up to a new site are wary of the security of the site, and don’t want their information stored on the site’s database.
+- Many people are lazy and don’t want to fill out multiple forms with information just to see what a site offers
+- People would rather not have to type at all in order to sign up and log in&lt;/p&gt;
+
+&lt;p&gt;There is a solution to this problem. In fact, if you think about it, most people already are signed in to some other site, maybe a well known site like facebook, twitter, or linkedin. Wouldn’t it be wonderful if we can just ask facebook to verify our user’s identity for us?&lt;/p&gt;
+
+&lt;p&gt;Well, that’s Oauth in a nutshell.&lt;/p&gt;
+
+&lt;p&gt;Oauth is a protocol that allows our site to request credentials from a third party API to verify a user’s identity, as well as other information based on what the user wants the app to access.&lt;/p&gt;
+
+&lt;p&gt;We benefit our users in the following ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;They don’t have to re-enter any information&lt;/li&gt;
+  &lt;li&gt;They don’t have to type anything&lt;/li&gt;
+  &lt;li&gt;They can sign up and log in with one click&lt;/li&gt;
+  &lt;li&gt;They don’t have to remember their password from our site&lt;/li&gt;
+  &lt;li&gt;They don’t have to store their sensitive information on our site&lt;/li&gt;
+  &lt;li&gt;and many more benefits!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The way Oauth works is that an app is configured to redirect a user when they click on the signup or login button to the application that hosts the authentication API. The user is then presented with the login page for that app asking for their permission for the original app to access the API. When their information is verified correctly, they are redirected back to the original app with the user’s information and a token which is stored at the API. This token can now be used to make requests for the user’s credentials in the future.&lt;/p&gt;
+
+&lt;p&gt;One of the ways of doing Oauth with Rails is called omniauth which is an authentication system that has many “strategies”. Like for example using twitter’s API would be one strategy. Using facebook’s API would be another.&lt;/p&gt;
+
+&lt;p&gt;I set up a simple implementation of Oauth2 following &lt;a href=&quot;https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/&quot;&gt;this tutorial&lt;/a&gt; for a rails app.&lt;/p&gt;
+
+&lt;p&gt;I won’t go into every detail but the main steps involved in getting it to work are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Creating a rails app&lt;/li&gt;
+  &lt;li&gt;Adding the omniauth strategy gem to the Gemfile i.e. &lt;a href=&quot;https://github.com/arunagw/omniauth-twitter&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;omniauth-twitter&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Registering an app with the provider which involves going to twitter’s developer section and filling out a form about your app and defining a callback url for twitter to redirect to after a successful authentication&lt;/li&gt;
+  &lt;li&gt;Defining a model, controller and route in our app to handle the incoming information&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another important detail of the Oauth protocol is the permissions that a user authorizes our app for.&lt;/p&gt;
+
+&lt;p&gt;Any provider of Oauth has levels of permission that are asked of the user when the user signs in to authorize the app. Sometimes, we only want to get the user’s sign in credentials or profile info, when we don’t need any of their other information. But in other cases, we want other information about the user. Maybe it’s their email address, or maybe it’s something within the application like in the case of twitter, getting the user’s tweets. To go a level higher, what if our app wants to post tweets on behalf of the user? There are many different things that the API can give access to and it’s up to the app to request permission for those things and for the user to authorize the request.&lt;/p&gt;
+
+&lt;p&gt;There is a lot of information available about Oauth2 and how to implement it in defferent environments.&lt;/p&gt;
+
+&lt;p&gt;You can check out &lt;a href=&quot;https://github.com/joesasson/hava-amina/blob/master/notes.md#oauth&quot;&gt;my own notes&lt;/a&gt; that I took while implementing it as a standalone project (including integrating it with devise and using figaro to store the API keys and a heck of a lot more, maybe too much)&lt;/p&gt;
+
+&lt;p&gt;Links:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://oauth.net/2/&quot;&gt;OAuth docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2&quot;&gt;Tutorial from Digital Ocean&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arunagw/omniauth-twitter&quot;&gt;omniauth twitter gem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/omniauth/omniauth&quot;&gt;omniauth gem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/&quot;&gt;sitepoint tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/joesasson/hava-amina/blob/master/notes.md#oauth&quot;&gt;my own humble notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.</summary></entry><entry><title type="html">Setting up a Rails App with Rspec and Postgres</title><link href="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html" rel="alternate" type="text/html" title="Setting up a Rails App with Rspec and Postgres" /><published>2017-03-24T00:00:00-04:00</published><updated>2017-03-24T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres</id><content type="html" xml:base="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html">&lt;p&gt;I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github &lt;a href=&quot;https://github.com/joesasson/hava-amina&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;While running &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt; I realized that I actually wanted to change certain things.&lt;/p&gt;
 
