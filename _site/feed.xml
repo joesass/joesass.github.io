@@ -1,5 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-31T15:08:49-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">Putting the Oh! in Oauth</title><link href="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html" rel="alternate" type="text/html" title="Putting the Oh! in Oauth" /><published>2017-03-31T00:00:00-04:00</published><updated>2017-03-31T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/31/putting-the-oh-in-oauth</id><content type="html" xml:base="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html">&lt;p&gt;If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-18T11:32:20-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">Basic Refactoring In Javascript</title><link href="http://localhost:4000/2017/09/18/refactoring-in-javascript.html" rel="alternate" type="text/html" title="Basic Refactoring In Javascript" /><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><id>http://localhost:4000/2017/09/18/refactoring-in-javascript</id><content type="html" xml:base="http://localhost:4000/2017/09/18/refactoring-in-javascript.html">&lt;p&gt;&lt;img src=&quot;https://media3.giphy.com/media/AW9vY1bbQA9MY/giphy.gif&quot; alt=&quot;Refactoring&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-is-refactoring-important&quot;&gt;Why is Refactoring important?&lt;/h2&gt;
+
+&lt;p&gt;As Developers, we often find ourselves copying and pasting code. Which is to say, out of convenience and a lack of foreplanning, we tend to take the easy way out when we start writing something.&lt;/p&gt;
+
+&lt;p&gt;Sometimes, when reviewing or trying to modify our code, we realize that modifying one thing means that we need to modify our source in 10 different places. That leads to errors, inconsistencies, tedium, and just plain old &lt;a href=&quot;https://i.ytimg.com/vi/eMJk4y9NGvE/maxresdefault.jpg&quot;&gt;plumbusus&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While we should certainly plan to not have a lot of repetition in our code, things don’t always go according to plan.&lt;/p&gt;
+
+&lt;p&gt;I recently wrote a Google Sheets Add-On to help manage inventory worksheets.&lt;/p&gt;
+
+&lt;p&gt;In the app, I wrote three very similar functions that were almost identical except for slight differences. I did take the easy way out (or the hard way if you look at it in a long-term perspective) and copy and pasted my first function and modified it for each copy. Oops.&lt;/p&gt;
+
+&lt;p&gt;So after I got it all to work, I decided to make a minor change that affected all three function, and I realized that I would have to find the relevant code, and change it three times. In this process, I forgot to change it in one of the places, and ended up with a bug that I had to hunt down.&lt;/p&gt;
+
+&lt;p&gt;I needed to refactor my code to reuse that line of code. So where to begin?&lt;/p&gt;
+
+&lt;h2 id=&quot;refactoring-variables&quot;&gt;Refactoring Variables&lt;/h2&gt;
+
+&lt;p&gt;So I decided I would like to have all my functions share certain variables. That’s the easy part. Or so I thought.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to do this is just to create a global variable that all the functions share. But &lt;a href=&quot;http://wiki.c2.com/?GlobalVariablesAreBad&quot;&gt;global variables are bad!&lt;/a&gt; (I didn’t actually read this but I should).&lt;/p&gt;
+
+&lt;p&gt;Also, I ran into a different Google Sheets related problem:&lt;/p&gt;
+
+&lt;p&gt;The add-on that I created calls the Google API function &lt;a href=&quot;https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#getActiveSpreadsheet()&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getActiveSpreadsheet()&lt;/code&gt;&lt;/a&gt; which is only available in container-bound scripts (which means the script is defined to work on one specific sheet). The exception to this rule is if the &lt;code class=&quot;highlighter-rouge&quot;&gt;getActiveSpreadsheet()&lt;/code&gt; is called from the &lt;code class=&quot;highlighter-rouge&quot;&gt;onInstall()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;onOpen()&lt;/code&gt; function (the &lt;code class=&quot;highlighter-rouge&quot;&gt;onInstall()&lt;/code&gt; actually calls the &lt;code class=&quot;highlighter-rouge&quot;&gt;onOpen()&lt;/code&gt;). I was also able to make these calls from my functions because they were being defined by &lt;code class=&quot;highlighter-rouge&quot;&gt;onOpen&lt;/code&gt; through the menu creation. So I was not able to make these calls in my global scope. Therefore I was not able to share the variables :(&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-shared-object&quot;&gt;Creating a Shared Object&lt;/h2&gt;
+
+&lt;p&gt;But, this turned out to be a blessing in disguise, because I had to search for another way of sharing these variables and I came across an &lt;a href=&quot;https://stackoverflow.com/questions/3201473/jquery-sharing-vars-between-functions/3201563#3201563&quot;&gt;answer on Stack Overflow&lt;/a&gt; which enlightened me.&lt;/p&gt;
+
+&lt;p&gt;Basically, the solution to sharing variables the right way in javascript is to create a function which initializes all the variables and returns an object with getters and setters for each variable.&lt;/p&gt;
+
+&lt;p&gt;I happened to skip the part of the getters and setters, but I did create a function which initialized the variables the regular way, and returned them all in one object.&lt;/p&gt;
+
+&lt;p&gt;So this is similar to what my code looked like:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;somethingElse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;P.S the above return statement has been given a pretty cool shorthand by ES6. When returning variables as properties with the same name you can skip the colon and the right hand side expression. So in the above example I could have just done something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I find this very attractive. (Try it in your browser now, it’s really cool)
+The sad part is that Google has not implemented this version of javascript yet for Google Apps Scripts, so I couldn’t actually use it in this project.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-the-shared-object-creator&quot;&gt;Using the Shared Object Creator&lt;/h2&gt;
+
+&lt;p&gt;The way to use this object creator is to run the function as an assignmnt to a new variable which will now store the returned object:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// We can now access the variables from the shared object as properties&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; &quot;hello&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Now, I was able to access these properties form within my functions!&lt;/p&gt;
+
+&lt;p&gt;The only caveat (Google Apps specific) which I wasted hours on, is that I needed to initialize the shared object at the top of each function because trying to initialize once globally for all the functions turned out to be a mistake for the same reason as above (calling &lt;code class=&quot;highlighter-rouge&quot;&gt;getActive()&lt;/code&gt; in the global scope does not work).&lt;/p&gt;
+
+&lt;h2 id=&quot;sharing-and-refactoring-functions&quot;&gt;Sharing and Refactoring Functions&lt;/h2&gt;
+
+&lt;p&gt;Now extracting functions is a little bit harder. What I mean by extracting functions is taking lines of repeated code that is shared and turning it into a function like such:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So normally I can just take all that and wrap it in a function:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeArrayAndDoStuffToIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeArrayAndDoStuffToIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now I can share that function across my script.&lt;/p&gt;
+
+&lt;p&gt;But what if I the array was defined in the context of the block that it was in? In other words, what if the array was different each time that I wrote this code?&lt;/p&gt;
+
+&lt;p&gt;So the answer to this is to make the function skip the creation of the variable, but accept an array as a parameter. Then only do stuff to it. The code would look something like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;modifiedA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now I can pass in any array and the same operations will be performed on it.&lt;/p&gt;
+
+&lt;h2 id=&quot;sharing-is-caring&quot;&gt;Sharing is Caring&lt;/h2&gt;
+
+&lt;p&gt;Now that we know how to extract the function, we can simply define the extracted function in our shared object creator, then return it in our object. Then we can use it across our code!&lt;/p&gt;
+
+&lt;p&gt;Here is a simple (completely fantastical and fictional) example of the final result of all the sharing:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;cookType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;setCookType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;cookType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeBakedPotatoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;potatoes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCookType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;baked&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bakedPotatoes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;potatoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bakedPotatoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bakedPotatoes&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeFries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// I like fries better usually&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;potatoes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;potato&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCookType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fried&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;potatoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fries&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I found this concept of using shared objects really cool and also a fundamental part of the larger theme of using modules and application architecture (which I have explored, but not fully). Hopefully, I will devote some time to writing about those concepts in a future blog post. Thank you for reading!&lt;/p&gt;</content><category term="refactoring" /><category term="javascript" /><category term="DRY" /><summary type="html"></summary></entry><entry><title type="html">Putting the Oh! in Oauth</title><link href="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html" rel="alternate" type="text/html" title="Putting the Oh! in Oauth" /><published>2017-03-31T00:00:00-04:00</published><updated>2017-03-31T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/31/putting-the-oh-in-oauth</id><content type="html" xml:base="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html">&lt;p&gt;If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/8xHQoMpEXa45q/giphy.gif&quot; alt=&quot;im-doctor&quot; /&gt;&lt;/p&gt;
 
@@ -1185,100 +1357,4 @@ The instructions to get it set up are very easy and clear and it takes about 10 
 
 &lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;
 
-&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry><entry><title type="html">The Poetry of Code</title><link href="http://localhost:4000/2016/12/12/welcome-to-joesass.html" rel="alternate" type="text/html" title="The Poetry of Code" /><published>2016-12-12T13:16:50-05:00</published><updated>2016-12-12T13:16:50-05:00</updated><id>http://localhost:4000/2016/12/12/welcome-to-joesass</id><content type="html" xml:base="http://localhost:4000/2016/12/12/welcome-to-joesass.html">&lt;blockquote&gt;
-  &lt;p&gt;“Language is by its very nature a communal thing; that is, it expresses
-never the exact thing but a compromise—that which is common to
-you, me, and everybody.”
-—Thomas Ernest Hulme, Speculations&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;writing-about-writing&quot;&gt;Writing about writing&lt;/h2&gt;
-
-&lt;p&gt;There’s so many things to write about it just maddening.
-But, it still seems to be tough to pick out a topic.&lt;/p&gt;
-
-&lt;p&gt;This post will be about writing. Cuz’ y’now, I’m doing it right now and it’s definitely
-something worth writing about.&lt;/p&gt;
-
-&lt;p&gt;Writing things is important to people that are growing. It forces perspective and
-clarification and it lets that crazy voice in your head loose so you can see what it’s doing.&lt;/p&gt;
-
-&lt;h2 id=&quot;writing-poems-in-computer&quot;&gt;Writing poems in Computer&lt;/h2&gt;
-
-&lt;p&gt;We normally think of writing/expression as something that is done in our native language. But the truth is that writing code can be every bit as expressive and creative, if not more so.&lt;/p&gt;
-
-&lt;p&gt;When we code, we express ourselves to a computer and give it instructions, but at the same time we are writing a message to other developers about our thought process on the problem that
-is being solved and also about how the instructions to the computer should be phrased.&lt;/p&gt;
-
-&lt;p&gt;We strive to write our code in a way that is readable and pleasurable to the reader.&lt;/p&gt;
-
-&lt;h2 id=&quot;are-you-really-who-you-think-you-are&quot;&gt;Are you really who you think you are?&lt;/h2&gt;
-
-&lt;p&gt;Well, the above is not actually hard and true. There are many coders who don’t really
-care what the code looks like when you try to read it. They just care that it works and gets the job done.&lt;/p&gt;
-
-&lt;p&gt;Confession: I was (and still might be) one of those coders.&lt;/p&gt;
-
-&lt;p&gt;One of the most important habits that Flatiron School
-teaches is how to write beautiful and readable code while also making it functional and robust. It should be a pleasure to read it.
-At this point we all take for granted that this is something
-important, but I think that it is definitely not always the case with all developers, or even languages (ahem, ahem, javascript).&lt;/p&gt;
-
-&lt;p&gt;I love the fact that we are learning Ruby first.
-Ruby is a beautiful and poetic language, it’s truly a mix of English and Computer and allows a great degree of stylistic freedom.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-about-our-great-human-languages&quot;&gt;What about our great Human Languages?&lt;/h2&gt;
-
-&lt;p&gt;If you’ve witnessed two people who speak different languages try to communicate, you can start to appreciate how difficult it is to create this delicate balance that we are going after.&lt;/p&gt;
-
-&lt;p&gt;I’ve been privy to conversations in Spanish that had a disturbing amount of English
-thrown in, which resulted in a messy Spanglish that really only
-got by through hand motions and multiple repetitions.&lt;/p&gt;
-
-&lt;p&gt;I think my point is that we can view code as a new language, spoken to computers
-and we have the choice to write in ugly prose or write it as sublime verse.&lt;/p&gt;
-
-&lt;p&gt;Until I started with code, I had no access to poetry. But after
-seeing the beautiful things people can write, I believe that we
-as coders are the next generation of poets. And we are doing
-something that hasn’t been done ever before, we’re writing
-poetry in two languages that can be understood by two different species.&lt;/p&gt;
-
-&lt;h2 id=&quot;coding-is-a-high-form-of-creativity&quot;&gt;Coding is a high form of creativity&lt;/h2&gt;
-
-&lt;p&gt;Programming and coding are really outdated terms for what we do.
-All the terms used to describe what developers do are
-misleading.&lt;/p&gt;
-
-&lt;p&gt;I remember having this idea
-of a coder as someone who just sits staring at a screen all day and memorizes
-different commands to give computers. To most non-coders this is probably a pretty accurate picture of what we do.&lt;/p&gt;
-
-&lt;p&gt;We should be called something more along the lines of universal language architects.&lt;/p&gt;
-
-&lt;p&gt;Every time we write a program, we are taking two different languages and making
-something that everyone can understand.&lt;/p&gt;
-
-&lt;p&gt;Let’s strive to make our code as poetic and beautiful as possible and write it in a way that connects and speaks to other developers through our code.&lt;/p&gt;
-
-&lt;h2 id=&quot;future-topics&quot;&gt;Future Topics&lt;/h2&gt;
-
-&lt;p&gt;Here are some of the things that I would like to write about in the future:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/each_with_object&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Enumerable.each_with_object&lt;/code&gt; and  &lt;code class=&quot;highlighter-rouge&quot;&gt;.index&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Random Topic Generator (gets every page title from the Ruby Docs and selects one at random)&lt;/li&gt;
-  &lt;li&gt;Getting started with static sites on Jekyll (this blog)&lt;/li&gt;
-  &lt;li&gt;Why you should start using Markdown today&lt;/li&gt;
-  &lt;li&gt;Useful Tips and Tricks and keyboard shortcuts&lt;/li&gt;
-  &lt;li&gt;Writing a Slack Integration&lt;/li&gt;
-  &lt;li&gt;Doing interesting things with Markov Chains&lt;/li&gt;
-  &lt;li&gt;Cool iterators that you didn’t know about&lt;/li&gt;
-  &lt;li&gt;Top 5 gems that can save you time&lt;/li&gt;
-  &lt;li&gt;Automating every day tasks&lt;/li&gt;
-  &lt;li&gt;Getting started with Markdown&lt;/li&gt;
-  &lt;li&gt;ActiveRecord commands that fire SQL vs ones that don’t&lt;/li&gt;
-&lt;/ul&gt;</content><category term="hello" /><category term="world" /><category term="writing" /><summary type="html">“Language is by its very nature a communal thing; that is, it expresses
-never the exact thing but a compromise—that which is common to
-you, me, and everybody.”
-—Thomas Ernest Hulme, Speculations</summary></entry></feed>
+&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry></feed>
