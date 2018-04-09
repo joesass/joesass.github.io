@@ -26,8 +26,9 @@ Now, in order to use rspec, all I need to do is add `gem 'rspec'` to the Gemfile
 Then, to generate the folders and files and helpers for the project, run:
 
 ```
-rails generate:rspec
+rails generate rspec:install
 ```
+(Thanks Edward Woodcock for the correction)
 
 This will add the `spec` folder along with the `rails_helper` and `spec_helper` and also`.rspec` file in the main directory.
 
