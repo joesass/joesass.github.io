@@ -21,7 +21,8 @@ rails new app-name -T -d postgresql
 
 The `-T` will skip the testing framework altogether, and the `-d postgresql` will set postgres as the db.
 
-Now, in order to use rspec, all I need to do is add `gem 'rspec'` to the Gemfile in the test and development group and `bundle install`.
+Now, in order to use rspec, all I need to do is add `gem 'rspec-rails'`  to the Gemfile in the test and development group and `bundle install`.
+(Thanks Nicholas Hunt for the correction)
 
 Then, to generate the folders and files and helpers for the project, run:
 

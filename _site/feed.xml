@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-18T11:32:20-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">Basic Refactoring In Javascript</title><link href="http://localhost:4000/2017/09/18/refactoring-in-javascript.html" rel="alternate" type="text/html" title="Basic Refactoring In Javascript" /><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><id>http://localhost:4000/2017/09/18/refactoring-in-javascript</id><content type="html" xml:base="http://localhost:4000/2017/09/18/refactoring-in-javascript.html">&lt;p&gt;&lt;img src=&quot;https://media3.giphy.com/media/AW9vY1bbQA9MY/giphy.gif&quot; alt=&quot;Refactoring&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-09T14:13:16-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">Key Terms of Responsive Web Design</title><link href="http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design.html" rel="alternate" type="text/html" title="Key Terms of Responsive Web Design" /><published>2018-04-09T00:00:00-04:00</published><updated>2018-04-09T00:00:00-04:00</updated><id>http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design</id><content type="html" xml:base="http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design.html">&lt;p&gt;Styling frameworks are great… until they are not.&lt;/p&gt;
+
+&lt;p&gt;I am currently building a React app and when it came time to choose a design system, I took a look at Facebook’s &lt;a href=&quot;https://reactjs.org/community/ui-components.html&quot;&gt;great list&lt;/a&gt; of component libraries. I’ve used the material-ui library before to mixed results and I wanted to try something new. I chose to use &lt;a href=&quot;https://ant.design/&quot;&gt;ant design&lt;/a&gt; which looks really nice and has some amazing components such as search bars, sortable tables, etc. (go check it out). So everything was going great, until I had to use my app on a phone. Then it became the opposite of great. Basically it was unusable. So I had to figure out styling on my own.&lt;/p&gt;
+
+&lt;p&gt;When I learn something, I like to read about it through various tutorials, then pick out the terms that I’m not familiar with and research those independently. I find that this makes for a good mix of high and low level learning.&lt;/p&gt;
+
+&lt;p&gt;In this article I would like to share the term part of my journey. Below is a list of terms that I was not familiar with before I started, and my definition and explanation of them:&lt;/p&gt;
+
+&lt;h3 id=&quot;viewport&quot;&gt;Viewport&lt;/h3&gt;</content><summary type="html">Styling frameworks are great… until they are not.</summary></entry><entry><title type="html">Basic Refactoring In Javascript</title><link href="http://localhost:4000/2017/09/18/refactoring-in-javascript.html" rel="alternate" type="text/html" title="Basic Refactoring In Javascript" /><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><id>http://localhost:4000/2017/09/18/refactoring-in-javascript</id><content type="html" xml:base="http://localhost:4000/2017/09/18/refactoring-in-javascript.html">&lt;p&gt;&lt;img src=&quot;https://media3.giphy.com/media/AW9vY1bbQA9MY/giphy.gif&quot; alt=&quot;Refactoring&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why-is-refactoring-important&quot;&gt;Why is Refactoring important?&lt;/h2&gt;
 
@@ -262,9 +270,10 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;Then, to generate the folders and files and helpers for the project, run:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails generate:rspec
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails generate rspec:install
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;(Thanks Edward Woodcock for the correction)&lt;/p&gt;
 
 &lt;p&gt;This will add the &lt;code class=&quot;highlighter-rouge&quot;&gt;spec&lt;/code&gt; folder along with the &lt;code class=&quot;highlighter-rouge&quot;&gt;rails_helper&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;spec_helper&lt;/code&gt; and also&lt;code class=&quot;highlighter-rouge&quot;&gt;.rspec&lt;/code&gt; file in the main directory.&lt;/p&gt;
 
@@ -1224,137 +1233,4 @@ The instructions to get it set up are very easy and clear and it takes about 10 
 
 &lt;p&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Daring Fireball Official Documentation&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;</content><summary type="html">What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.</summary></entry><entry><title type="html">Converting Arrays to Hashes (in the desert)</title><link href="http://localhost:4000/ruby/2016/12/16/each-with-object.html" rel="alternate" type="text/html" title="Converting Arrays to Hashes (in the desert)" /><published>2016-12-16T13:16:50-05:00</published><updated>2016-12-16T13:16:50-05:00</updated><id>http://localhost:4000/ruby/2016/12/16/each-with-object</id><content type="html" xml:base="http://localhost:4000/ruby/2016/12/16/each-with-object.html">&lt;p&gt;Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://orig06.deviantart.net/02b1/f/2012/158/0/2/desert_night_sky_by_monkypoo-d52lpy6.jpg&quot; alt=&quot;Desert&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You stick your hand in your pocket. Out comes an array.&lt;/p&gt;
-
-&lt;p&gt;Huh? How did this get into my pocket?&lt;/p&gt;
-
-&lt;p&gt;It doesn’t matter. You are desperate and you have no choice but to look inside the array.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;['food',  'bubble gum', 'weapon', 'AK47', 'vehicle', 'tank', 'another_vehicle', 'lexus', 'more_food', 'sirloin steak']&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Like yeah, these things are helpful but they are not really helpful in an array like that. You need them to be in a hash like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;food&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;bubble gum&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;weapon&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;AK47&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;vehicle&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;tank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;another_vehicle&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;lexus&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;more_food&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;sirloin steak&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;So now you have to convert your Hash into an Array.&lt;/p&gt;
-
-&lt;p&gt;So you say to yourself, this is easy… and you write a while loop.&lt;/p&gt;
-
-&lt;h3 id=&quot;while-loop&quot;&gt;While Loop&lt;/h3&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;      
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So you do this, but you forget to increment the i, and you die of starvation. Oh Well…&lt;/p&gt;
-
-&lt;p&gt;Here’s some of the things you could have done:&lt;/p&gt;
-
-&lt;h3 id=&quot;each-with-index&quot;&gt;Each with Index&lt;/h3&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_index&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;hash&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This is a great way to do it, but it smells a little, because you are creating a hash in memory.&lt;/p&gt;
-
-&lt;p&gt;You can’t have any smell because the animals are hungry and you will attract their attention.&lt;/p&gt;
-
-&lt;p&gt;You can Inject the items into a hash:&lt;/p&gt;
-
-&lt;h3 id=&quot;inject&quot;&gt;Inject&lt;/h3&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This works by taking in an object and iterating through the array and adding the item into the object.&lt;/p&gt;
-
-&lt;h3 id=&quot;each-with-object&quot;&gt;Each with Object&lt;/h3&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put_my_stuff_in_a_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({}).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;with_index&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;even?&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array_of_stuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This is similar to inject but without having to return the object after each iteration, also you can chain a &lt;code class=&quot;highlighter-rouge&quot;&gt;with_index&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;each_with_object&lt;/code&gt; to make it more concise.&lt;/p&gt;
-
-&lt;p&gt;(Thanks to Ashley and Eric for their help with this one)&lt;/p&gt;
-
-&lt;h3 id=&quot;the-best-way&quot;&gt;The Best Way&lt;/h3&gt;
-
-&lt;p&gt;You are now in heaven and you decide that you would like to find the best way to solve this problem..&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://weknowyourdreams.com/images/heaven/heaven-03.jpg&quot; alt=&quot;Heaven&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If only you would have just just googled how to do that..&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=how%20to%20convert%20an%20array%20into%20a%20hash&quot;&gt;How to convert an array to a hash&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You would get the easiest way to do it.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-the-hash-constructor&quot;&gt;Using the Hash Constructor&lt;/h3&gt;
-
-&lt;p&gt;Your first result is Stack Overflow and you find a few interesting answers, but the shortest and most concise is this one: &lt;code class=&quot;highlighter-rouge&quot;&gt;Hash[*array.flatten]&lt;/code&gt;. You try it and it works! But howww?&lt;/p&gt;
-
-&lt;p&gt;So you look up the documentation for Hash initializer, figuring that would be a good place to start.&lt;/p&gt;
-
-&lt;p&gt;Hmmm. You can initialize a Hash with multiple arguments and it will automatically do this for you.&lt;/p&gt;
-
-&lt;p&gt;All you have to do is pass the Hash an array inside of brackets:&lt;/p&gt;
-
-&lt;p&gt;From the &lt;a href=&quot;https://ruby-doc.org/core-1.8.7/Hash.html#method-c-5B-5D&quot;&gt;Ruby Docs&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_hash&lt;/span&gt;
-
-&lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; {&quot;a&quot;=&amp;gt;100, &quot;b&quot;=&amp;gt;200}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So you can pass in any even number of values that you want, but there’s still a small problem.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; initializer method of Hash is expecting a bunch of arguments and you are passing in one array. This is breaking the initializer and will not work, but you do have a way to turn that array into many arguments: The splat method!&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;What this will do is destructure the array and pass it into the Hash initializer as separate arguments.&lt;/p&gt;
-
-&lt;p&gt;Wow! Ruby is Awesome!&lt;/p&gt;
-
-&lt;p&gt;The moral of the story is, never use a while loop in the desert or you will surely die.&lt;/p&gt;</content><summary type="html">Our story begins in the night. You’re stuck in the desert with no food or water. There are yellow eyeballs peering out at you from the darkness and a faint hissing can be heard in the distance. You start to get worried. You look for something, a weapon, a shield, or something that can help you survive the night.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;</content><summary type="html">What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.</summary></entry></feed>
