@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>This quick trick will make your console.log(“10x Better”) | Joe Sasson’s Blog</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="This quick trick will make your console.log(“10x Better”)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Yes, it’s a clickbaity title, but it’s legit." />
+<meta property="og:description" content="Yes, it’s a clickbaity title, but it’s legit." />
+<link rel="canonical" href="http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html" />
+<meta property="og:url" content="http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html" />
+<meta property="og:site_name" content="Joe Sasson’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-14T00:00:00-05:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html","headline":"This quick trick will make your console.log(“10x Better”)","dateModified":"2018-12-14T00:00:00-05:00","datePublished":"2018-12-14T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html"},"description":"Yes, it’s a clickbaity title, but it’s legit.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Joe Sasson's Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Joe Sasson&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">This quick trick will make your console.log(&quot;10x Better&quot;)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-12-14T00:00:00-05:00" itemprop="datePublished">Dec 14, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Yes, it’s a clickbaity title, but it’s legit.</p>
+
+<p><img src="/images/log-console.jpg" alt="nice-log-console" class="img-responsive" /></p>
+<h6 id="a-very-nice-log-console"><a href="https://logfurnitureplace.com/cedar-lake-log-media-console-clmc.html?gclid=EAIaIQobChMIn_Kqs-Sf3wIVBYbICh1PUgTFEAQYBCABEgIwC_D_BwE">A very nice log console</a></h6>
+
+<p>Herein, I will demonstrate a very simple trick that has changed the way I use <code class="highlighter-rouge">console.log</code>.</p>
+
+<p>Before I do this though, I just want to make a disclaimer that I in no way endorse the use of <code class="highlighter-rouge">console.log</code> as your main debugging tool.
+Use the <code class="highlighter-rouge">debugger</code> keyword instead or <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/">breakpoints in the chrome dev tools</a>, <a href="https://code.visualstudio.com/docs/editor/debugging">text editor</a>, or <a href="https://me.me/i/everything-everything-has-stopped-working-a-problem-caused-the-program-11588426">what have you</a>.</p>
+
+<p>But sometimes, you just want to log something out. So in those cases, here is a handy trick for you.</p>
+
+<h2 id="tldr">TLDR</h2>
+
+<p>Wrap variables that you are logging with a pair of curly brackets - <code class="highlighter-rouge">{}</code>.</p>
+
+<p>This will log out the variables using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions">object property shorthand</a> to display the name of the variable and the value in a nice readable way without having to manually label what you’re logging.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thing</span> <span class="o">=</span> <span class="s2">"I am a very lovely thing"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">thing</span> <span class="p">})</span> <span class="c1">// -&gt; { thing: "I am a very lovely thing" }</span>
+<span class="c1">// or multiple variables</span>
+<span class="kd">const</span> <span class="nx">nothing</span> <span class="o">=</span> <span class="s2">"I am a very lovely nothing"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">thing</span><span class="p">,</span> <span class="nx">nothing</span> <span class="p">})</span> <span class="c1">// -&gt; { thing: "I am a very lovely thing",</span>
+                                <span class="c1">//      nothing: "I am a very lovely nothing" }</span>
+</code></pre></div></div>
+
+<p>Read on below for more detail.</p>
+
+<h2 id="ye-olde-way">Ye Olde Way</h2>
+
+<p>Let’s set the scene:</p>
+
+<p>You are writing a magnificent intricate program, everything is just sailing right along.</p>
+
+<p>When suddenly, you look at the screen and everything is <span style="color: red">blood red</span>, and you just don’t know where it’s coming from.</p>
+
+<p>You say to yourself, hmmm I wonder if the <code class="highlighter-rouge">apples</code> variable is doing something funny, so you decide to log it out:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">apples</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nx">oranges</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="kd">let</span> <span class="nx">bananas</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nx">doSomethingWithFruits</span><span class="p">(</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">apples</span><span class="p">)</span> <span class="c1">// -&gt; 3</span>
+</code></pre></div></div>
+
+<p>Ahh great! <code class="highlighter-rouge">apples</code> is 3.</p>
+
+<p>Maybe it’s a different fruit?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">apples</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nx">oranges</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="kd">let</span> <span class="nx">bananas</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nx">doSomethingWithFruits</span><span class="p">(</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span><span class="p">)</span> <span class="c1">// -&gt; 3 2 8</span>
+</code></pre></div></div>
+
+<p>You look at you console and all you see is <code class="highlighter-rouge">3 2 8</code> and you spend about 5 minutes figuring out which is which.</p>
+
+<p>So then you say, let me label them with text before the value:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">apples</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nx">oranges</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="kd">let</span> <span class="nx">bananas</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nx">doSomethingWithFruits</span><span class="p">(</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Apples: "</span> <span class="o">+</span> <span class="nx">apples</span><span class="p">,</span> <span class="s2">"Oranges: "</span> <span class="o">+</span> <span class="nx">oranges</span><span class="p">,</span> <span class="s2">"Bananas: "</span> <span class="o">+</span> <span class="nx">bananas</span><span class="p">)</span>
+ <span class="c1">// -&gt; Apples: 3 Oranges: 2 Bananas: 8</span>
+</code></pre></div></div>
+
+<p>This works, but it’s time consuming and it’s just tedious to do this every time you log something out.</p>
+
+<h2 id="consolelog-20">console.log() 2.0</h2>
+
+<p>Instead, you can log out your variables as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">apples</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="kd">let</span> <span class="nx">oranges</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="kd">let</span> <span class="nx">bananas</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nx">doSomethingWithFruits</span><span class="p">(</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">apples</span><span class="p">,</span> <span class="nx">oranges</span><span class="p">,</span> <span class="nx">bananas</span> <span class="p">})</span>
+ <span class="c1">// -&gt; apples: 3 oranges: 2 bananas: 8</span>
+</code></pre></div></div>
+
+<p>This will give you the same results as the labeling that you did above, but with much less effort.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>This trick works because of the very useful ES6 feature that I call <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions">object property shorthand notation</a>.</p>
+
+<p>All this does is take a variable name and turn it into a key value pair of the variable name and it’s value.</p>
+
+<p>From the docs:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// old way</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">'foo'</span><span class="p">,</span> 
+    <span class="nx">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="nx">c</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> 
+  <span class="na">a</span><span class="p">:</span> <span class="nx">a</span><span class="p">,</span>
+  <span class="na">b</span><span class="p">:</span> <span class="nx">b</span><span class="p">,</span>
+  <span class="na">c</span><span class="p">:</span> <span class="nx">c</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">'foo'</span><span class="p">,</span> 
+    <span class="nx">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> 
+    <span class="nx">c</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="c1">// Shorthand property names (ES2015)</span>
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">};</span>
+
+<span class="c1">// In other words,</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">o</span><span class="p">.</span><span class="nx">a</span> <span class="o">===</span> <span class="p">{</span><span class="nx">a</span><span class="p">}.</span><span class="nx">a</span><span class="p">));</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h2 id="caveat">Caveat</h2>
+
+<p>If you are trying to log a nested property, this won’t work and you will get a syntax error.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">wheels</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="nx">car</span><span class="p">.</span><span class="nx">wheels</span> <span class="p">})</span> <span class="c1">// -&gt; SyntaxError</span>
+</code></pre></div></div>
+
+<p>Instead, you can add a quick label by logging as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">wheels</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">({</span> <span class="na">wheels</span><span class="p">:</span> <span class="nx">car</span><span class="p">.</span><span class="nx">wheels</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>I hope you enjoyed this trick!</p>
+
+<p>If you have any questions, please leave a comment below.</p>
+
+  </div><a class="u-url" href="/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Joe Sasson&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Joe Sasson&#39;s Blog</li><li><a class="u-email" href="mailto:ysasson88@gmail.com">ysasson88@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/joesasson"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">joesasson</span></a></li><li><a href="https://www.twitter.com/thingifly"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">thingifly</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about the music of code and my journey to learn and play it.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

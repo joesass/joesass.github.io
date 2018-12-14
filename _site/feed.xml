@@ -1,13 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-09T14:13:16-04:00</updated><id>http://localhost:4000//</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
-</subtitle><entry><title type="html">Key Terms of Responsive Web Design</title><link href="http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design.html" rel="alternate" type="text/html" title="Key Terms of Responsive Web Design" /><published>2018-04-09T00:00:00-04:00</published><updated>2018-04-09T00:00:00-04:00</updated><id>http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design</id><content type="html" xml:base="http://localhost:4000/2018/04/09/key-terms-of-responsive-web-design.html">&lt;p&gt;Styling frameworks are great… until they are not.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-14T13:14:57-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Joe Sasson’s Blog</title><subtitle>A blog about the music of code and my journey to learn and play it.
+</subtitle><entry><title type="html">This quick trick will make your console.log(“10x Better”)</title><link href="http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html" rel="alternate" type="text/html" title="This quick trick will make your console.log(&quot;10x Better&quot;)" /><published>2018-12-14T00:00:00-05:00</published><updated>2018-12-14T00:00:00-05:00</updated><id>http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better</id><content type="html" xml:base="http://localhost:4000/2018/12/14/this-quick-trick-will-make-your-console-log-10x-better.html">&lt;p&gt;Yes, it’s a clickbaity title, but it’s legit.&lt;/p&gt;
 
-&lt;p&gt;I am currently building a React app and when it came time to choose a design system, I took a look at Facebook’s &lt;a href=&quot;https://reactjs.org/community/ui-components.html&quot;&gt;great list&lt;/a&gt; of component libraries. I’ve used the material-ui library before to mixed results and I wanted to try something new. I chose to use &lt;a href=&quot;https://ant.design/&quot;&gt;ant design&lt;/a&gt; which looks really nice and has some amazing components such as search bars, sortable tables, etc. (go check it out). So everything was going great, until I had to use my app on a phone. Then it became the opposite of great. Basically it was unusable. So I had to figure out styling on my own.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/log-console.jpg&quot; alt=&quot;nice-log-console&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;a-very-nice-log-console&quot;&gt;&lt;a href=&quot;https://logfurnitureplace.com/cedar-lake-log-media-console-clmc.html?gclid=EAIaIQobChMIn_Kqs-Sf3wIVBYbICh1PUgTFEAQYBCABEgIwC_D_BwE&quot;&gt;A very nice log console&lt;/a&gt;&lt;/h6&gt;
 
-&lt;p&gt;When I learn something, I like to read about it through various tutorials, then pick out the terms that I’m not familiar with and research those independently. I find that this makes for a good mix of high and low level learning.&lt;/p&gt;
+&lt;p&gt;Herein, I will demonstrate a very simple trick that has changed the way I use &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;In this article I would like to share the term part of my journey. Below is a list of terms that I was not familiar with before I started, and my definition and explanation of them:&lt;/p&gt;
+&lt;p&gt;Before I do this though, I just want to make a disclaimer that I in no way endorse the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log&lt;/code&gt; as your main debugging tool.
+Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;debugger&lt;/code&gt; keyword instead or &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/javascript/&quot;&gt;breakpoints in the chrome dev tools&lt;/a&gt;, &lt;a href=&quot;https://code.visualstudio.com/docs/editor/debugging&quot;&gt;text editor&lt;/a&gt;, or &lt;a href=&quot;https://me.me/i/everything-everything-has-stopped-working-a-problem-caused-the-program-11588426&quot;&gt;what have you&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;viewport&quot;&gt;Viewport&lt;/h3&gt;</content><summary type="html">Styling frameworks are great… until they are not.</summary></entry><entry><title type="html">Basic Refactoring In Javascript</title><link href="http://localhost:4000/2017/09/18/refactoring-in-javascript.html" rel="alternate" type="text/html" title="Basic Refactoring In Javascript" /><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><id>http://localhost:4000/2017/09/18/refactoring-in-javascript</id><content type="html" xml:base="http://localhost:4000/2017/09/18/refactoring-in-javascript.html">&lt;p&gt;&lt;img src=&quot;https://media3.giphy.com/media/AW9vY1bbQA9MY/giphy.gif&quot; alt=&quot;Refactoring&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;But sometimes, you just want to log something out. So in those cases, here is a handy trick for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TLDR&lt;/h2&gt;
+
+&lt;p&gt;Wrap variables that you are logging with a pair of curly brackets - &lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will log out the variables using the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions&quot;&gt;object property shorthand&lt;/a&gt; to display the name of the variable and the value in a nice readable way without having to manually label what you’re logging.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am a very lovely thing&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thing&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; { thing: &quot;I am a very lovely thing&quot; }&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// or multiple variables&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nothing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;I am a very lovely nothing&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nothing&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; { thing: &quot;I am a very lovely thing&quot;,&lt;/span&gt;
+                                &lt;span class=&quot;c1&quot;&gt;//      nothing: &quot;I am a very lovely nothing&quot; }&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Read on below for more detail.&lt;/p&gt;
+
+&lt;h2 id=&quot;ye-olde-way&quot;&gt;Ye Olde Way&lt;/h2&gt;
+
+&lt;p&gt;Let’s set the scene:&lt;/p&gt;
+
+&lt;p&gt;You are writing a magnificent intricate program, everything is just sailing right along.&lt;/p&gt;
+
+&lt;p&gt;When suddenly, you look at the screen and everything is &lt;span style=&quot;color: red&quot;&gt;blood red&lt;/span&gt;, and you just don’t know where it’s coming from.&lt;/p&gt;
+
+&lt;p&gt;You say to yourself, hmmm I wonder if the &lt;code class=&quot;highlighter-rouge&quot;&gt;apples&lt;/code&gt; variable is doing something funny, so you decide to log it out:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doSomethingWithFruits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; 3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ahh great! &lt;code class=&quot;highlighter-rouge&quot;&gt;apples&lt;/code&gt; is 3.&lt;/p&gt;
+
+&lt;p&gt;Maybe it’s a different fruit?&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doSomethingWithFruits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; 3 2 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You look at you console and all you see is &lt;code class=&quot;highlighter-rouge&quot;&gt;3 2 8&lt;/code&gt; and you spend about 5 minutes figuring out which is which.&lt;/p&gt;
+
+&lt;p&gt;So then you say, let me label them with text before the value:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doSomethingWithFruits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Apples: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Oranges: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Bananas: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; Apples: 3 Oranges: 2 Bananas: 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This works, but it’s time consuming and it’s just tedious to do this every time you log something out.&lt;/p&gt;
+
+&lt;h2 id=&quot;consolelog-20&quot;&gt;console.log() 2.0&lt;/h2&gt;
+
+&lt;p&gt;Instead, you can log out your variables as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doSomethingWithFruits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oranges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bananas&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; apples: 3 oranges: 2 bananas: 8&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will give you the same results as the labeling that you did above, but with much less effort.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;This trick works because of the very useful ES6 feature that I call &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Property_definitions&quot;&gt;object property shorthand notation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All this does is take a variable name and turn it into a key value pair of the variable name and it’s value.&lt;/p&gt;
+
+&lt;p&gt;From the docs:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// old way&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;na&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'foo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Shorthand property names (ES2015)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// In other words,&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;caveat&quot;&gt;Caveat&lt;/h2&gt;
+
+&lt;p&gt;If you are trying to log a nested property, this won’t work and you will get a syntax error.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;wheels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wheels&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; SyntaxError&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Instead, you can add a quick label by logging as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;wheels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;wheels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wheels&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I hope you enjoyed this trick!&lt;/p&gt;
+
+&lt;p&gt;If you have any questions, please leave a comment below.&lt;/p&gt;</content><author><name></name></author><summary type="html">Yes, it’s a clickbaity title, but it’s legit.</summary></entry><entry><title type="html">Basic Refactoring In Javascript</title><link href="http://localhost:4000/2017/09/18/refactoring-in-javascript.html" rel="alternate" type="text/html" title="Basic Refactoring In Javascript" /><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><id>http://localhost:4000/2017/09/18/refactoring-in-javascript</id><content type="html" xml:base="http://localhost:4000/2017/09/18/refactoring-in-javascript.html">&lt;p&gt;&lt;img src=&quot;https://media3.giphy.com/media/AW9vY1bbQA9MY/giphy.gif&quot; alt=&quot;Refactoring&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why-is-refactoring-important&quot;&gt;Why is Refactoring important?&lt;/h2&gt;
 
@@ -45,7 +171,7 @@
 
 &lt;p&gt;So this is similar to what my code looked like:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
@@ -56,17 +182,15 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;P.S the above return statement has been given a pretty cool shorthand by ES6. When returning variables as properties with the same name you can skip the colon and the right hand side expression. So in the above example I could have just done something like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I find this very attractive. (Try it in your browser now, it’s really cool)
 The sad part is that Google has not implemented this version of javascript yet for Google Apps Scripts, so I couldn’t actually use it in this project.&lt;/p&gt;
@@ -75,12 +199,11 @@ The sad part is that Google has not implemented this version of javascript yet f
 
 &lt;p&gt;The way to use this object creator is to run the function as an assignmnt to a new variable which will now store the returned object:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// We can now access the variables from the shared object as properties&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;sharedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;something&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; &quot;hello&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Now, I was able to access these properties form within my functions!&lt;/p&gt;
 
 &lt;p&gt;The only caveat (Google Apps specific) which I wasted hours on, is that I needed to initialize the shared object at the top of each function because trying to initialize once globally for all the functions turned out to be a mistake for the same reason as above (calling &lt;code class=&quot;highlighter-rouge&quot;&gt;getActive()&lt;/code&gt; in the global scope does not work).&lt;/p&gt;
@@ -89,16 +212,15 @@ The sad part is that Google has not implemented this version of javascript yet f
 
 &lt;p&gt;Now extracting functions is a little bit harder. What I mean by extracting functions is taking lines of repeated code that is shared and turning it into a function like such:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;So normally I can just take all that and wrap it in a function:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeArrayAndDoStuffToIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeArrayAndDoStuffToIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -107,8 +229,7 @@ The sad part is that Google has not implemented this version of javascript yet f
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeArrayAndDoStuffToIt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now I can share that function across my script.&lt;/p&gt;
 
@@ -116,7 +237,7 @@ The sad part is that Google has not implemented this version of javascript yet f
 
 &lt;p&gt;So the answer to this is to make the function skip the creation of the variable, but accept an array as a parameter. Then only do stuff to it. The code would look something like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -125,8 +246,7 @@ The sad part is that Google has not implemented this version of javascript yet f
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;modifiedA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuffToArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now I can pass in any array and the same operations will be performed on it.&lt;/p&gt;
 
@@ -136,7 +256,7 @@ The sad part is that Google has not implemented this version of javascript yet f
 
 &lt;p&gt;Here is a simple (completely fantastical and fictional) example of the final result of all the sharing:&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sharedObjectCreator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;somethingElse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
 
@@ -176,10 +296,9 @@ The sad part is that Google has not implemented this version of javascript yet f
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fries&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I found this concept of using shared objects really cool and also a fundamental part of the larger theme of using modules and application architecture (which I have explored, but not fully). Hopefully, I will devote some time to writing about those concepts in a future blog post. Thank you for reading!&lt;/p&gt;</content><category term="refactoring" /><category term="javascript" /><category term="DRY" /><summary type="html"></summary></entry><entry><title type="html">Putting the Oh! in Oauth</title><link href="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html" rel="alternate" type="text/html" title="Putting the Oh! in Oauth" /><published>2017-03-31T00:00:00-04:00</published><updated>2017-03-31T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/31/putting-the-oh-in-oauth</id><content type="html" xml:base="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html">&lt;p&gt;If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.&lt;/p&gt;
+&lt;p&gt;I found this concept of using shared objects really cool and also a fundamental part of the larger theme of using modules and application architecture (which I have explored, but not fully). Hopefully, I will devote some time to writing about those concepts in a future blog post. Thank you for reading!&lt;/p&gt;</content><author><name></name></author><category term="refactoring" /><category term="javascript" /><category term="DRY" /><summary type="html"></summary></entry><entry><title type="html">Putting the Oh! in Oauth</title><link href="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html" rel="alternate" type="text/html" title="Putting the Oh! in Oauth" /><published>2017-03-31T00:00:00-04:00</published><updated>2017-03-31T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/31/putting-the-oh-in-oauth</id><content type="html" xml:base="http://localhost:4000/2017/03/31/putting-the-oh-in-oauth.html">&lt;p&gt;If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/8xHQoMpEXa45q/giphy.gif&quot; alt=&quot;im-doctor&quot; /&gt;&lt;/p&gt;
 
@@ -194,10 +313,12 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;The answer is, we do it for our users.&lt;/p&gt;
 
-&lt;p&gt;When trying to get someone to sign up for your site, besides for actually getting them to want your product or service, there are another few hurdles to overcome.
-- Many people signing up to a new site are wary of the security of the site, and don’t want their information stored on the site’s database.
-- Many people are lazy and don’t want to fill out multiple forms with information just to see what a site offers
-- People would rather not have to type at all in order to sign up and log in&lt;/p&gt;
+&lt;p&gt;When trying to get someone to sign up for your site, besides for actually getting them to want your product or service, there are another few hurdles to overcome.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Many people signing up to a new site are wary of the security of the site, and don’t want their information stored on the site’s database.&lt;/li&gt;
+  &lt;li&gt;Many people are lazy and don’t want to fill out multiple forms with information just to see what a site offers&lt;/li&gt;
+  &lt;li&gt;People would rather not have to type at all in order to sign up and log in&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;There is a solution to this problem. In fact, if you think about it, most people already are signed in to some other site, maybe a well known site like facebook, twitter, or linkedin. Wouldn’t it be wonderful if we can just ask facebook to verify our user’s identity for us?&lt;/p&gt;
 
@@ -248,7 +369,7 @@ There are many ways to implement this system. The most basic being writing it yo
   &lt;li&gt;&lt;a href=&quot;https://github.com/omniauth/omniauth&quot;&gt;omniauth gem&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/&quot;&gt;sitepoint tutorial&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/joesasson/hava-amina/blob/master/notes.md#oauth&quot;&gt;my own humble notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><summary type="html">If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.</summary></entry><entry><title type="html">Setting up a Rails App with Rspec and Postgres</title><link href="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html" rel="alternate" type="text/html" title="Setting up a Rails App with Rspec and Postgres" /><published>2017-03-24T00:00:00-04:00</published><updated>2017-03-24T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres</id><content type="html" xml:base="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html">&lt;p&gt;I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github &lt;a href=&quot;https://github.com/joesasson/hava-amina&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">If you’ve ever built an application that is to be used by real people, you know how important it is to know that a user is who they say they are.</summary></entry><entry><title type="html">Setting up a Rails App with Rspec and Postgres</title><link href="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html" rel="alternate" type="text/html" title="Setting up a Rails App with Rspec and Postgres" /><published>2017-03-24T00:00:00-04:00</published><updated>2017-03-24T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres</id><content type="html" xml:base="http://localhost:4000/2017/03/24/setting-up-a-rails-app-with-rspec-and-postgres.html">&lt;p&gt;I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github &lt;a href=&quot;https://github.com/joesasson/hava-amina&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;While running &lt;code class=&quot;highlighter-rouge&quot;&gt;rails new&lt;/code&gt; I realized that I actually wanted to change certain things.&lt;/p&gt;
 
@@ -260,19 +381,18 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;Here is the one line command:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails new app-name -T -d postgresql
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails new app-name &lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; postgresql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;-T&lt;/code&gt; will skip the testing framework altogether, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-d postgresql&lt;/code&gt; will set postgres as the db.&lt;/p&gt;
 
-&lt;p&gt;Now, in order to use rspec, all I need to do is add &lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'rspec'&lt;/code&gt; to the Gemfile in the test and development group and &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, in order to use rspec, all I need to do is add &lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'rspec-rails'&lt;/code&gt;  to the Gemfile in the test and development group and &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;.
+(Thanks Nicholas Hunt for the correction)&lt;/p&gt;
 
 &lt;p&gt;Then, to generate the folders and files and helpers for the project, run:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails generate rspec:install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails generate rspec:install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;(Thanks Edward Woodcock for the correction)&lt;/p&gt;
 
 &lt;p&gt;This will add the &lt;code class=&quot;highlighter-rouge&quot;&gt;spec&lt;/code&gt; folder along with the &lt;code class=&quot;highlighter-rouge&quot;&gt;rails_helper&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;spec_helper&lt;/code&gt; and also&lt;code class=&quot;highlighter-rouge&quot;&gt;.rspec&lt;/code&gt; file in the main directory.&lt;/p&gt;
@@ -287,10 +407,9 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.railsrc&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-T
--d postgresql
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;-T&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; postgresql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;There are other ways of customizing more fully using rails templates (in blog post linked above), but ultimately I decided I can do that later, because I’m lazy.&lt;/p&gt;
 
@@ -298,26 +417,24 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;Now for some words from my 7 month old son:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:
 ''
 ...........]];;;                        CBBEA
 '
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Thanks Mo!&lt;/p&gt;</content><summary type="html">I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github here.</summary></entry><entry><title type="html">Sorting Objects Through their Properties Numerically with Javascript - How it Works</title><link href="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html" rel="alternate" type="text/html" title="Sorting Objects Through their Properties Numerically with Javascript - How it Works" /><published>2017-03-15T00:00:00-04:00</published><updated>2017-03-15T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works</id><content type="html" xml:base="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html">&lt;p&gt;Recently, when writing the code for my (as of yet unpublished) chrome extension, &lt;a href=&quot;https://github.com/joesasson/historian&quot;&gt;Historian&lt;/a&gt;, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.&lt;/p&gt;
+&lt;p&gt;Thanks Mo!&lt;/p&gt;</content><author><name></name></author><summary type="html">I recently started a new project with Ruby on Rails called Hava Amina. It’s still in development, the code is on Github here.</summary></entry><entry><title type="html">Sorting Objects Through their Properties Numerically with Javascript - How it Works</title><link href="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html" rel="alternate" type="text/html" title="Sorting Objects Through their Properties Numerically with Javascript - How it Works" /><published>2017-03-15T00:00:00-04:00</published><updated>2017-03-15T00:00:00-04:00</updated><id>http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works</id><content type="html" xml:base="http://localhost:4000/2017/03/15/sorting-numerically-with-javascript-how-it-works.html">&lt;p&gt;Recently, when writing the code for my (as of yet unpublished) chrome extension, &lt;a href=&quot;https://github.com/joesasson/historian&quot;&gt;Historian&lt;/a&gt;, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.&lt;/p&gt;
 
 &lt;p&gt;I was trying to sort an array of javascript objects by the value of one of the properties. Here is an example:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arrayOfObjects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arrayOfObjects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Bob&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'black'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'blonde'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Steve&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'red'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Jorge&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'brown'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Alice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'purple'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We want to sort this array by the value of the age property in ascending order.&lt;/p&gt;
 
@@ -339,11 +456,10 @@ There are many ways to implement this system. The most basic being writing it yo
 
 &lt;p&gt;So for example we have an array:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// We want array == [1, 2, 3, 4, 5]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Here are the steps to the solution:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -354,20 +470,19 @@ There are many ways to implement this system. The most basic being writing it yo
   &lt;li&gt;Set the value of i + 1 to the value of the temporary value&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Here’s the code implementation:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;js
-function partialSort(array){
-  for(var i = 0; i &amp;lt; array.length - 1; i++){
-    if(array[i] &amp;gt; array[i + 1]){
-      var temp = array[i]
-      array[i] = array[i + 1]
-      array[i + 1] = temp
-    }
-  }
-}
-// will modify argument of [5, 2, 3, 4, 1] to [2, 3, 4, 1, 5]
-&lt;/code&gt;
-Do you see what happened?&lt;/p&gt;
+&lt;p&gt;Here’s the code implementation:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;partialSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// will modify argument of [5, 2, 3, 4, 1] to [2, 3, 4, 1, 5]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Do you see what happened?&lt;/p&gt;
 
 &lt;p&gt;The 5 moved all the way to the end!&lt;/p&gt;
 
@@ -395,7 +510,7 @@ We need to wrap it all in a while loop that keeps this procedure going until the
 
 &lt;p&gt;Here’s the code:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fullSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fullSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sorted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;sorted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
@@ -411,8 +526,7 @@ We need to wrap it all in a while loop that keeps this procedure going until the
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// If we run fullSort on [5, 2, 3, 4, 1] it will now be [1, 2, 3, 4, 5]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;It totally works!&lt;/p&gt;
 
@@ -457,23 +571,21 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;Just some examples:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 5 - 2 = 3 = positive number = swap&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 2 - 3 = -1 = negative number = don't swap&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 5 - 1 = 4 = positive number = swap&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The code looks like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// number == [1, 2, 3, 4, 5]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;sorting-an-object-based-on-a-property&quot;&gt;Sorting an object based on a property&lt;/h2&gt;
 
@@ -485,7 +597,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;For our example above:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arrayOfObjects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arrayOfObjects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Bob&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'black'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'blonde'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Steve&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;hairColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'red'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
@@ -504,12 +616,11 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 &lt;span class=&quot;c1&quot;&gt;//   { name: &quot;Alice&quot;, age: 32, hairColor: 'purple' },&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//   { name: &quot;Jorge&quot;, age: 44, hairColor: 'brown' }&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// ]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;We now have our objects sorting based on the age. This is useful in many situations.&lt;/p&gt;
 
-&lt;p&gt;I know that this was a pretty simple problem to solve and the answer was right there in the documentation, but it was extremely rewarding to get in the weeds on the lower level of things and understanding how the plumbing works.&lt;/p&gt;</content><summary type="html">Recently, when writing the code for my (as of yet unpublished) chrome extension, Historian, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.</summary></entry><entry><title type="html">9 Must Know Tips for Google Chrome Dev Tools</title><link href="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html" rel="alternate" type="text/html" title="9 Must Know Tips for Google Chrome Dev Tools" /><published>2017-03-09T00:00:00-05:00</published><updated>2017-03-09T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools</id><content type="html" xml:base="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html">&lt;p&gt;&lt;img src=&quot;https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89059.jpg&quot; alt=&quot;Chrome&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I know that this was a pretty simple problem to solve and the answer was right there in the documentation, but it was extremely rewarding to get in the weeds on the lower level of things and understanding how the plumbing works.&lt;/p&gt;</content><author><name></name></author><summary type="html">Recently, when writing the code for my (as of yet unpublished) chrome extension, Historian, which interacts with the browser history and returns interesting statistics, I came across a simple but interesting problem.</summary></entry><entry><title type="html">9 Must Know Tips for Google Chrome Dev Tools</title><link href="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html" rel="alternate" type="text/html" title="9 Must Know Tips for Google Chrome Dev Tools" /><published>2017-03-09T00:00:00-05:00</published><updated>2017-03-09T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools</id><content type="html" xml:base="http://localhost:4000/2017/03/09/9-must-know-tips-for-google-chrome-dev-tools.html">&lt;p&gt;&lt;img src=&quot;https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89059.jpg&quot; alt=&quot;Chrome&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Google Chrome’s Dev Tools is one of the most powerful debugging tools ever made. If you are developing any type of front end web application, you will inevitably be using it to debug your app.&lt;/p&gt;
 
@@ -550,11 +661,13 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;That’s it for now! I am sure there are so many more. If you know of a trick that you just have to share, please leave it in the comments section below.&lt;/p&gt;
 
-&lt;p&gt;Thanks for reading!&lt;/p&gt;</content><category term="chrome" /><category term="devtools" /><summary type="html"></summary></entry><entry><title type="html">The problem that Redux solves in one simple example</title><link href="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html" rel="alternate" type="text/html" title="The problem that Redux solves in one simple example" /><published>2017-03-03T00:00:00-05:00</published><updated>2017-03-03T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example</id><content type="html" xml:base="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html">&lt;p&gt;After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called &lt;a href=&quot;https://joesasson.github.io/anjou/&quot;&gt;anjou&lt;/a&gt; using those libraries and principles.&lt;/p&gt;
+&lt;p&gt;Thanks for reading!&lt;/p&gt;</content><author><name></name></author><category term="chrome" /><category term="devtools" /><summary type="html"></summary></entry><entry><title type="html">The problem that Redux solves in one simple example</title><link href="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html" rel="alternate" type="text/html" title="The problem that Redux solves in one simple example" /><published>2017-03-03T00:00:00-05:00</published><updated>2017-03-03T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example</id><content type="html" xml:base="http://localhost:4000/2017/03/03/the-problem-that-redux-solves-in-one-simple-example.html">&lt;p&gt;After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called &lt;a href=&quot;https://joesasson.github.io/anjou/&quot;&gt;anjou&lt;/a&gt; using those libraries and principles.&lt;/p&gt;
 
-&lt;p&gt;The app has a few very basic capabilities(for now):
-  - Take in a name and add it to a list
-  - Randomly pair up two names on the list&lt;/p&gt;
+&lt;p&gt;The app has a few very basic capabilities(for now):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Take in a name and add it to a list&lt;/li&gt;
+  &lt;li&gt;Randomly pair up two names on the list&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;why-react&quot;&gt;Why React?&lt;/h2&gt;
 
@@ -572,19 +685,18 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;To give a basic overview of the app as it currently stands, here is my components directory:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-- /components
----- AppHeader.jsx
----- NameContainer.jsx
----- NameInput.jsx
----- NameList.jsx
----- PairContainer.jsx
----- PairItem.jsx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; /components
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; AppHeader.jsx
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; NameContainer.jsx
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; NameInput.jsx
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; NameList.jsx
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; PairContainer.jsx
+&lt;span class=&quot;nt&quot;&gt;----&lt;/span&gt; PairItem.jsx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Without getting into the redux implementation, let’s take a look at the React components that we are concerned with (actual code may vary, you can visit the &lt;a href=&quot;https://github.com/joesasson/anjou&quot;&gt;github repo&lt;/a&gt; to see it):&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameInput&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameInput&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
   &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
@@ -596,7 +708,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameList&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameList&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
   &lt;span class=&quot;nx&quot;&gt;generatePairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt;
@@ -616,7 +728,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`name-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/li&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}
 &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
 &lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;generatePairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Generate&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Pairs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/button&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
 &lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
@@ -624,7 +736,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PairContainer&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PairContainer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
   &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
@@ -636,8 +748,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
 
@@ -655,9 +766,9 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;We can easily envision a solution where a higher level component, something named NameContainer or NameApp would hold the state of the data in it’s local state and we can have out lower level components inherit callbacks and data from it, like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameContainer&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NameContainer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-  &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -678,8 +789,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 &lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;Note: The above is not actually implemented code, just a possible way to get the components to talk to each other.&lt;/em&gt;&lt;/p&gt;
 
@@ -715,7 +825,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;Redux - Motivation&quot;&gt;http://redux.js.org/docs/introduction/Motivation.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><summary type="html">After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called anjou using those libraries and principles.</summary></entry><entry><title type="html">Javascript Events</title><link href="http://localhost:4000/2017/02/07/javascript-events.html" rel="alternate" type="text/html" title="Javascript Events" /><published>2017-02-07T00:00:00-05:00</published><updated>2017-02-07T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/07/javascript-events</id><content type="html" xml:base="http://localhost:4000/2017/02/07/javascript-events.html">&lt;p&gt;When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">After recently learning about Redux and React in The Flatiron School (which I just graduated from), I decided I would build my own app called anjou using those libraries and principles.</summary></entry><entry><title type="html">Javascript Events</title><link href="http://localhost:4000/2017/02/07/javascript-events.html" rel="alternate" type="text/html" title="Javascript Events" /><published>2017-02-07T00:00:00-05:00</published><updated>2017-02-07T00:00:00-05:00</updated><id>http://localhost:4000/2017/02/07/javascript-events</id><content type="html" xml:base="http://localhost:4000/2017/02/07/javascript-events.html">&lt;p&gt;When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?&lt;/p&gt;
 
 &lt;p&gt;Boy was I wrong.&lt;/p&gt;
 
@@ -763,19 +873,17 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;They are nothing special. In fact you can make one by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; keyword just like any other object.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; Event { isTrusted: false, type: 'click', etc.}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then you can &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch&lt;/code&gt; the event using &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatchEvent()&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;At this point nothing will happen because we haven’t told our program to listen for this type of event.&lt;/p&gt;
 
@@ -799,16 +907,14 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;What should we do when we receive one of these Events? Well that’s what the EventHandler is for. After telling our element to listen for an event we want to tell it what to do, and we do that in the form of passing in a function as the second argument to the listener function.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'clickeroooo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'clickeroooo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Now when we dispatch our click event, our event will get added to the event loop and will get called when it is first in line.&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dispatchEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;partay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; clickeroooo&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;bubbling&quot;&gt;Bubbling&lt;/h2&gt;
 
@@ -816,18 +922,16 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
 
 &lt;p&gt;One of the interesting things about Events is that they bubble up through the DOM. What this means is that if we have a nested element like this:&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;child&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And we add a click handler to both of them:&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'parent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am your faaaaather'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'parent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'I am your faaaaather'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'child'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Noooooooo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://codepen.io/dibson/pen/vgaMvR?editors=1111&quot;&gt;Try this example on Codepen&lt;/a&gt;&lt;/p&gt;
 
@@ -853,7 +957,7 @@ If the result is a positive number that means that a is greater than b.&lt;/p&gt
   &lt;li&gt;&lt;a href=&quot;https://www.kirupa.com/html5/event_capturing_bubbling_javascript.htm&quot;&gt;Event Capturing and Bubbling&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop&quot;&gt;MDN Event Loop&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://eloquentjavascript.net/14_event.html&quot;&gt;Eloquent Javascript&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><summary type="html">When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?</summary></entry><entry><title type="html">Javascript Closures</title><link href="http://localhost:4000/2017/01/25/javascript-closures.html" rel="alternate" type="text/html" title="Javascript Closures" /><published>2017-01-25T00:00:00-05:00</published><updated>2017-01-25T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/25/javascript-closures</id><content type="html" xml:base="http://localhost:4000/2017/01/25/javascript-closures.html">&lt;h3 id=&quot;why-should-i-care-about-closures&quot;&gt;Why should I care about Closures?&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">When I started learning Javascript, I, like you, thought Events were going to be fun!! After all, who doesn’t like to party?</summary></entry><entry><title type="html">Javascript Closures</title><link href="http://localhost:4000/2017/01/25/javascript-closures.html" rel="alternate" type="text/html" title="Javascript Closures" /><published>2017-01-25T00:00:00-05:00</published><updated>2017-01-25T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/25/javascript-closures</id><content type="html" xml:base="http://localhost:4000/2017/01/25/javascript-closures.html">&lt;h3 id=&quot;why-should-i-care-about-closures&quot;&gt;Why should I care about Closures?&lt;/h3&gt;
 
 &lt;p&gt;If you want some motivation to learn closures, maybe you should take a look at what some of the public voices are saying about it.&lt;/p&gt;
 
@@ -914,7 +1018,7 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;1 - To Create a custom function generator&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Create an add function that adds a certain number to the argument&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Create an add function that adds a certain number to the argument&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;addNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;
@@ -957,11 +1061,10 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; &quot;Bonjour Frank&quot;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;sayBonjour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Charlie'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; &quot;Bonjour Charlie&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;2 - To make functions with private variables&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setPassword&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setPassword&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;passwordInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;passwordInput&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -972,8 +1075,7 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; false&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;checkPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'1234'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;how-does-it-work&quot;&gt;How does it work&lt;/h3&gt;
 
@@ -1003,11 +1105,10 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;Ruby has a datatype called a block that we are familiar with from iterator methods like &lt;code class=&quot;highlighter-rouge&quot;&gt;#each&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# This is a block&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;A block is not an object and doesn’t inherit from anything. It is just a set of procedures.&lt;/p&gt;
 
@@ -1019,7 +1120,7 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;Using the Proc datatype, we can create closures the same way we do in javascript, by defining procs within another block or proc and returning them into a variable and viola.&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_times&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;gen_times&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factor&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 
@@ -1029,8 +1130,7 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 &lt;span class=&quot;n&quot;&gt;times3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; 36&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;times5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; 25&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;times3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;times5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; 60&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;As you can see, closures are pretty cool, useful, and important.&lt;/p&gt;
 
@@ -1048,7 +1148,7 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;&lt;a href=&quot;https://scotch.io/tutorials/understanding-ruby-closures&quot;&gt;Scotch - Ruby Closures&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/&quot;&gt;Adam Waxman’s Blog post about Blocks, Procs, and Lambdas&lt;/a&gt;&lt;/p&gt;</content><summary type="html">Why should I care about Closures?</summary></entry><entry><title type="html">Dr. Jekyll, MD</title><link href="http://localhost:4000/2017/01/17/doctor-jekyll-md.html" rel="alternate" type="text/html" title="Dr. Jekyll, MD" /><published>2017-01-17T00:00:00-05:00</published><updated>2017-01-17T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/17/doctor-jekyll-md</id><content type="html" xml:base="http://localhost:4000/2017/01/17/doctor-jekyll-md.html">&lt;p&gt;What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/&quot;&gt;Adam Waxman’s Blog post about Blocks, Procs, and Lambdas&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Why should I care about Closures?</summary></entry><entry><title type="html">Dr. Jekyll, MD</title><link href="http://localhost:4000/2017/01/17/doctor-jekyll-md.html" rel="alternate" type="text/html" title="Dr. Jekyll, MD" /><published>2017-01-17T00:00:00-05:00</published><updated>2017-01-17T00:00:00-05:00</updated><id>http://localhost:4000/2017/01/17/doctor-jekyll-md</id><content type="html" xml:base="http://localhost:4000/2017/01/17/doctor-jekyll-md.html">&lt;p&gt;What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.&lt;/p&gt;
 
 &lt;p&gt;It was created in 2004 by John Gruber and Aaron Swartz with the purpose of creating a language that:&lt;/p&gt;
 
@@ -1092,13 +1192,12 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;In order to make a list all you have to do is make bullets using &lt;code class=&quot;highlighter-rouge&quot;&gt;-, *, or +&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Doctor Stuff:
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Doctor Stuff:
 &lt;span class=&quot;p&quot;&gt;
 -&lt;/span&gt; stethoscope
 &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; scalpel
 &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; anasthesia
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This will look like this:&lt;/p&gt;
 
@@ -1156,9 +1255,8 @@ Not knowing the answer to this question is a &lt;strong&gt;serious red flag&lt;/
 
 &lt;p&gt;Perhaps the most useful part of markdown for programmers like us is the way it handles code. All we need in order to turn an inline string into code formatting is to surround the string with backticks:&lt;/p&gt;
 
-&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I just woke up to find &lt;span class=&quot;sb&quot;&gt;`some weird code`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;I just woke up to find &lt;span class=&quot;sb&quot;&gt;`some weird code`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;and this is what it looks like:&lt;/p&gt;
 
@@ -1171,13 +1269,12 @@ before and three backticks after:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://snag.gy/CJxY9l.jpg&quot; alt=&quot;code-block&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code block
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;code block
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://snag.gy/bL8dkX.jpg&quot; alt=&quot;ruby-block&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Whats extra cool about this one is that most renderers preserve&lt;/span&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Whats extra cool about this one is that most renderers preserve&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# syntax highlighting if you specify a language&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Awesome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Fantastic&lt;/span&gt;
@@ -1189,8 +1286,7 @@ before and three backticks after:&lt;/p&gt;
     &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Isn't this &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@great&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;?&quot;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;text-editors&quot;&gt;Text Editors&lt;/h3&gt;
 
@@ -1214,12 +1310,11 @@ before and three backticks after:&lt;/p&gt;
 
 &lt;p&gt;Some of the useful features are the template engines and the themes that you can use. Also the way it structures URL’s is based on tags which can allow you to categorize your posts. Most posts include a header with some YAML in it that includes metadata, for example:&lt;/p&gt;
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Dr. Jekyll, MD&lt;/span&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Dr. Jekyll, MD&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I’m still new to Jekyll so hopefully I can pick up some more tricks and write about them in a later blog post.
 But for now the basics are good enough for me.&lt;/p&gt;
@@ -1233,4 +1328,4 @@ The instructions to get it set up are very easy and clear and it takes about 10 
 
 &lt;p&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Daring Fireball Official Documentation&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;</content><summary type="html">What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">What we are about to explore is a fantastic tool for writing words on the web. It’s called markdown and it’s what this blog is built on.</summary></entry></feed>
