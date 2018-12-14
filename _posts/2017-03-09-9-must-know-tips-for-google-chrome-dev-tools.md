@@ -4,7 +4,7 @@ title: 9 Must Know Tips for Google Chrome Dev Tools
 tags: chrome devtools
 ---
 
-![Chrome](https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89059.jpg)
+![Chrome](/images/chrome.jpg)
 
 
 Google Chrome's Dev Tools is one of the most powerful debugging tools ever made. If you are developing any type of front end web application, you will inevitably be using it to debug your app.
