@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Creating a Vanilla Javascript Select All/None Checkbox | Joe Sasson’s Blog</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Creating a Vanilla Javascript Select All/None Checkbox" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="You see it everywhere, but how is it done?" />
+<meta property="og:description" content="You see it everywhere, but how is it done?" />
+<link rel="canonical" href="http://localhost:4000/2019/03/14/vanilla-javascript-select-all-none.html" />
+<meta property="og:url" content="http://localhost:4000/2019/03/14/vanilla-javascript-select-all-none.html" />
+<meta property="og:site_name" content="Joe Sasson’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-14T00:00:00-04:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/2019/03/14/vanilla-javascript-select-all-none.html","headline":"Creating a Vanilla Javascript Select All/None Checkbox","dateModified":"2019-03-14T00:00:00-04:00","datePublished":"2019-03-14T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/14/vanilla-javascript-select-all-none.html"},"description":"You see it everywhere, but how is it done?","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Joe Sasson's Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Joe Sasson&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating a Vanilla Javascript Select All/None Checkbox</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-03-14T00:00:00-04:00" itemprop="datePublished">Mar 14, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="/images/select-all-none.gif" alt="select-all-none" class="img-responsive" /></p>
+<h5 id="you-see-it-everywhere-but-how-is-it-done">You see it everywhere, but how is it done?</h5>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>This is my attempt to document the process of learning how to create a checkbox input that either selects all or deselects all of it’s siblings.</p>
+
+<p>I am doing this in honor of the principle of “learn publicly” which someone wrote up on github once, but can’t find now. I thought it was brilliant and if someone can point me back there, I will be forever grateful.</p>
+
+<p>So, this is a simple feature that is everywhere on the web. Basically, I have a long list of checkboxes in a form, and I want to give the user the option to select all, or to deselect all at once.</p>
+
+<p>Here is my initial code:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"headers-form"</span><span class="nt">&gt;</span> <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">options</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="c1">// create elements in document</span>
+  <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'label'</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">span</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'span'</span><span class="p">)</span>
+
+  <span class="c1">// set element properties</span>
+  <span class="nx">input</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">`option-</span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">`</span>
+  <span class="nx">input</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'checkbox'</span>
+  <span class="nx">span</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">option</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">htmlFor</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">id</span>
+
+  <span class="c1">// append elements to dom</span>
+  <span class="nx">formGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+  <span class="nx">p</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">label</span><span class="p">)</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">span</span><span class="p">)</span>
+  <span class="nx">headersForm</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">formGroup</span><span class="p">)</span>    
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>So I obviously need to add another checkbox to the top of the form labelled “Select/Deselect All”.</p>
+
+<p>Here are my user stories:</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If all of the boxes are unchecked, the box will display as unchecked, and when a user checks it, it and all other boxes will get checked.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If some are checked and some are unchecked, the box will display as indeterminate and clicking on will check all other boxes and turn it to a check.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If all boxes are checked, the box will display as checked, and unchecking it will uncheck everything else.</p>
+  </li>
+</ul>
+
+<p>So I need a way to get the state of the list, let’s say there are three states: all-checked, all-unchecked, and some-checked.</p>
+
+<p>I can write a function that will take in the list of checkbox inputs and return the state.</p>
+
+<p>I’ll write my plan for the inside of the function in the comments of the function.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// inputList: NodeList</span>
+
+<span class="kd">function</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">inputList</span><span class="p">){</span>
+  <span class="c1">// filter out only checked elements</span>
+  <span class="c1">// if length of filtered array is equal to original array length, return 'all-checked'</span>
+  <span class="c1">// if length of filtered array is 0 return 'all-unchecked'</span>
+  <span class="c1">// if neither of those conditions are met, return 'some-checked'</span>
+
+  <span class="kd">let</span> <span class="nx">filteredByChecked</span> <span class="o">=</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="s1">'all-unchecked'</span> <span class="p">:</span>  
+    <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="s1">'all-checked'</span> <span class="p">:</span> <span class="s1">'some-checked'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>While I’m writing this, I realized that it would be simpler to name the states, <code class="highlighter-rouge">all</code>, <code class="highlighter-rouge">some</code>, and <code class="highlighter-rouge">none</code>. So I will refactor it below when I’m done.</p>
+
+<p>But first an explanation for the above hard to read but cooler syntax:</p>
+
+<p>I nested one ternary inside another. This is the first time I’ve ever attempted to do this, I think it is probably a little bit harder to read, but I’m going to try it and see if I can get used to it. What happens is that if the top level condition of the ternary is met, it will return <code class="highlighter-rouge">all-unchecked</code>, if the condition is not met, it will run <strong>another</strong> ternary, which will check if the length of the filtered list matched the original list, which means all are checked, and return either <code class="highlighter-rouge">all-checked</code> or <code class="highlighter-rouge">some-checked</code> based on that condition.</p>
+
+<p><img src="/images/ternary_dawg.jpg" alt="ternary-dawg" class="img-responsive" /></p>
+<h6 id="yes-i-made-this-meme-myself-thank-you-very-much-back-in-my-day-we-had-real-memes-not-like-the-garbage-they-have-these-days">Yes, I made this meme myself, thank you very much. Back in my day, we had real memes, not like the garbage they have these days</h6>
+
+<p>And here is the refactored version:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// inputList: NodeList</span>
+
+<span class="kd">function</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">inputList</span><span class="p">){</span>
+  <span class="c1">// filter out only checked elements</span>
+  <span class="c1">// if length of filtered array is equal to original array length, return 'all-checked'</span>
+  <span class="c1">// if length of filtered array is 0 return 'all-unchecked'</span>
+  <span class="c1">// if neither of those conditions are met, return 'some-checked'</span>
+
+  <span class="kd">let</span> <span class="nx">filteredByChecked</span> <span class="o">=</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="s1">'none'</span> <span class="p">:</span>  
+    <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="s1">'all'</span> <span class="p">:</span> <span class="s1">'some'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now that I have the state, I can start working on the actual checkbox and the change behavior.</p>
+
+<p>I just realized that I will have to update the state every time the user click on a member checkbox.</p>
+
+<p>So I have to attach a handler to the form to detect those changes and update the top one.</p>
+
+<p>The checkbox will start off as unchecked obviously, because nothing is checked yet.</p>
+
+<p>So the truth is, now that I think about it I don’t really need to check the state of the whole list.</p>
+
+<p>I can probably just respond to checks and unchecks. The only problem with this is, how will I know if all of the boxes are checked or unchecked, if I only get the event data on that one checkbox?</p>
+
+<p>So I need to check the state within the event handler to make sure that I have the right state.</p>
+
+<p>Let me actually add my checkbox to the DOM and figure out where to go from there.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">headersForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"headers-form"</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">formGroup</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">)</span>
+
+<span class="c1">// create my "master" checkbox here</span>
+<span class="kd">let</span> <span class="nx">selectAllP</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">selectAllLabel</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"label"</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">selectAllInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">selectAllSpan</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"span"</span><span class="p">)</span>
+<span class="nx">selectAllInput</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">"master-option"</span>
+<span class="nx">selectAllInput</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"checkbox"</span>
+<span class="nx">selectAllLabel</span><span class="p">.</span><span class="nx">htmlFor</span> <span class="o">=</span> <span class="nx">selectAllInput</span><span class="p">.</span><span class="nx">id</span>
+<span class="nx">selectAllSpan</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s1">'Select All/None'</span>
+<span class="nx">selectAllLabel</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">selectAllSpan</span><span class="p">)</span>
+<span class="nx">formGroup</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">selectAllP</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">selectAllLabel</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">selectAllInput</span><span class="p">)</span>
+
+<span class="nx">options</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">option</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="c1">// create elements in document</span>
+  <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'label'</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"input"</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">span</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'span'</span><span class="p">)</span>
+
+  <span class="c1">// set element properties</span>
+  <span class="nx">input</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">`option-</span><span class="p">${</span><span class="nx">i</span><span class="p">}</span><span class="s2">`</span>
+  <span class="nx">input</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'checkbox'</span>
+  <span class="nx">span</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">option</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">htmlFor</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">id</span>
+
+  <span class="c1">// append elements to dom</span>
+  <span class="nx">formGroup</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+  <span class="nx">p</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">label</span><span class="p">)</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span>
+  <span class="nx">label</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">span</span><span class="p">)</span>
+  <span class="c1">// add listener here</span>
+
+  <span class="nx">headersForm</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">formGroup</span><span class="p">)</span>    
+<span class="p">});</span>
+</code></pre></div></div>
+<p>If I need to do this one more time, I’m going to have to refactor to a higher abstraction, but for now it’s okay.</p>
+
+<p>Okay, now that I have the checkbox rendering, I can add a change event handler to all of the checkboxes.</p>
+
+<p>Here are my user stories:</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If all of the boxes are unchecked, the box will display as unchecked, and when a user checks it, it and all other boxes will get checked.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If some are checked and some are unchecked, the box will display as indeterminate and clicking on will check all other boxes and turn it to a check.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If all boxes are checked, the box will display as checked, and unchecking it will uncheck everything else.</p>
+  </li>
+</ul>
+
+<p>So, if a user clicks on the master checkbox, I will change the status of all the checkboxes to <code class="highlighter-rouge">checked</code></p>
+
+<p>I think I want to use an <code class="highlighter-rouge">onChange</code> listener onto the form, then I’ll detect wether it’s the master, or a different one.</p>
+
+<p>So I will just add the listener right before I add the submit listener.</p>
+
+<p>I will plan it in the comments.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">outputForm</span><span class="p">(){</span>
+  <span class="c1">//...</span>
+  <span class="nx">headersForm</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"change"</span><span class="p">,</span> <span class="nx">changeHandler</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">changeHandler</span><span class="p">(){</span>
+  <span class="c1">// get all the input children to iterate over later</span>
+  <span class="c1">// detect if currentTarget is master</span>
+    <span class="c1">// if it is, check if it's status is checked or unchecked</span>
+      <span class="c1">// if it's unchecked (or indeterminate) change all checked statuses to true</span>
+      <span class="c1">// if it's checked, change everything to false</span>
+    <span class="c1">// if currentTarget is not master, then it's a member</span>
+      <span class="c1">// check if it's checked or not</span>
+        <span class="c1">// if it's unchecked</span>
+          <span class="c1">// check it, then </span>
+          <span class="c1">// Check the state of the list</span>
+          <span class="c1">// If it's "some", change the master's status to indeterminate</span>
+          <span class="c1">// If it's "all", change the master to checked</span>
+        <span class="c1">// if it's checked</span>
+          <span class="c1">// uncheck it</span>
+          <span class="c1">// then check the state of the list</span>
+          <span class="c1">// if it's "none", uncheck the master</span>
+          <span class="c1">// if it's some, master is indeterminate </span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>So that’s the plan. Very conditionally nesty. I need to just implement it one step at a time.</p>
+
+<p>I’m going to write it as simple nested ifs, then I’ll try to come up with something more elegant.</p>
+
+<p>Maybe I can just write a function that will set the master just based on the state and nothing else.</p>
+
+<p>Because ultimately I’m going to have to check the state anyways.</p>
+
+<p>Let me try it both ways.</p>
+
+<p>Getting the input nodes should be pretty easy:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// get all the input children to iterate over later</span>
+<span class="kd">let</span> <span class="nx">checkboxes</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Okay, so I mixed up currentTarget and target in my comments up there.</p>
+
+<p>The currentTarget refers to where the handler has been attached, as opposed to where the event happened which is the target. Per the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget">MDN docs</a>.</p>
+
+<p>I should also get a reference to the master to make changes to it specifically as well.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">master</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now my code is looking like this:</p>
+
+<p>I’m going to change the places where I wrote currentTarget to target.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">changeHandler</span><span class="p">(){</span>
+  <span class="c1">// get all the input children to iterate over later</span>
+  <span class="kd">let</span> <span class="nx">checkboxes</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">master</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+  <span class="c1">// detect if target is master</span>
+    <span class="c1">// if it is, check if it's status is checked or unchecked</span>
+      <span class="c1">// if it's unchecked (or indeterminate) change all checked statuses to true</span>
+      <span class="c1">// if it's checked, change everything to false</span>
+    <span class="c1">// if target is not master, then it's a member</span>
+      <span class="c1">// check if it's checked or not</span>
+        <span class="c1">// if it's unchecked</span>
+          <span class="c1">// check it, then </span>
+          <span class="c1">// Check the state of the list</span>
+          <span class="c1">// If it's "some", change the master's status to indeterminate</span>
+          <span class="c1">// If it's "all", change the master to checked</span>
+        <span class="c1">// if it's checked</span>
+          <span class="c1">// uncheck it</span>
+          <span class="c1">// then check the state of the list</span>
+          <span class="c1">// if it's "none", uncheck the master</span>
+          <span class="c1">// if it's some, master is indeterminate </span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>So next I’m going to check if it’s master by checking if the id matches the id I set for the master.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">"master-option"</span><span class="p">){}</span>
+</code></pre></div></div>
+<p>Next I have to see if it’s checked. Now I ran into a little unexpected behavior here. Maybe you can figure out why before I reveal it.</p>
+
+<p>When I was debugging the code in devtools, the <code class="highlighter-rouge">checked</code> attribute was the opposite of what I expected. When I clicked on an unchecked box, the <code class="highlighter-rouge">checked</code> attribute said <code class="highlighter-rouge">true</code> and vice versa.</p>
+
+<p>In retrospect the issue is obvious (it always is). The handler runs after I change the status of the input, therefore when the handler is being called, the status of my <code class="highlighter-rouge">checked</code> attribute is <code class="highlighter-rouge">true</code>, because that’s what I changed it to. Super Obvious.</p>
+
+<p>So maybe I should restructure my plan a little bit:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">changeHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">// get all the input children to iterate over later</span>
+    <span class="kd">const</span> <span class="nx">checkboxes</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">master</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+    <span class="c1">// detect if target is master</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">"master-option"</span><span class="p">){</span>
+      <span class="c1">// if it is, check if its status is checked or unchecked</span>
+        <span class="c1">// if it's checked now, change everything to true</span>
+        <span class="c1">// if it's unchecked now, change all checked statuses to false</span>
+      <span class="p">}</span>
+      <span class="c1">// if currentTarget is not master, then it's a member</span>
+        <span class="c1">// check if it's checked or not</span>
+          <span class="c1">// if it's checked</span>
+            <span class="c1">// Check the state of the list</span>
+            <span class="c1">// If it's "some", change the master's status to indeterminate = true, checked = false</span>
+            <span class="c1">// If it's "all", change the master to checked = true, indeterminate = false</span>
+          <span class="c1">// if it's unchecked</span>
+            <span class="c1">// then check the state of the list</span>
+            <span class="c1">// if it's "none", masters checked = false, indeterminate = false</span>
+            <span class="c1">// if it's "some", master  indeterminate = false, checked = false</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>About the indeterminate thing, <a href="https://css-tricks.com/indeterminate-checkboxes/">it won’t change the checked status</a>.</p>
+
+<p>So I need to figure out how to deal with that. I still want to have it so I can show the user that some are selected.</p>
+
+<p>Let me rework my plan.</p>
+
+<p>Essentially, the only time I want to have a checked status on the master is when everything is checked, the indeterminate will “mask” an unchecked state.</p>
+
+<p>Let me first implement the behavior for when I click on the master.</p>
+
+<p>Then I’ll work on changing that.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">checkAll</span> <span class="o">=</span> <span class="nx">checkboxes</span> <span class="o">=&gt;</span> <span class="nx">checkboxes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">cb</span> <span class="o">=&gt;</span> <span class="nx">cb</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>I realized that I had a bug in my code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">master</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>There is no <code class="highlighter-rouge">getElementById</code> on <code class="highlighter-rouge">currentTarget</code> which returns a node. The only only thing you can call <code class="highlighter-rouge">getElementById</code> on is <code class="highlighter-rouge">document</code>. Lesson learned.
+Since there is only one unique id per page, that’s the only node that makes sense to search from.</p>
+
+<p>This fixed it:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">master</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>My next step is to deal with the deselection of all when they are all selected. Let me start when master is checked, I will just do the reverse of what I just did before.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">uncheckAll</span> <span class="o">=</span> <span class="nx">checkboxes</span> <span class="o">=&gt;</span> <span class="nx">checkboxes</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">cb</span> <span class="o">=&gt;</span> <span class="nx">cb</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And I will run these inside the conditionals:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="s2">"master-option"</span><span class="p">){</span>
+  <span class="c1">// if it is, check if its status is checked or unchecked</span>
+  <span class="kd">const</span> <span class="nx">targetChecked</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">checked</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">targetChecked</span><span class="p">){</span>
+    <span class="c1">// if it's checked now, change everything to true</span>
+    <span class="nx">checkAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// if it's unchecked now, change all checked statuses to false</span>
+    <span class="nx">uncheckAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Moving along!</p>
+
+<p>The only thing that’s left is updating the status of the master when all of the boxes are checked or unchecked from a member, and setting indeterminate when some are checked.</p>
+
+<p>It’s really just polish, but let’s git r done!</p>
+
+<p>Here are my user stories:</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />If all of the boxes are unchecked, the box will display as unchecked, and when a user checks it, it and all other boxes will get checked.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />If some are checked and some are unchecked, the box will display as indeterminate and clicking on will check all other boxes and turn it to a check.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />If all boxes are checked, the box will display as checked, and unchecking it will uncheck everything else.</p>
+  </li>
+</ul>
+
+<p>Okay, so I implemented all of the nested conditionals, now my code looks like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">changeHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">// get all the input children to iterate over later</span>
+    <span class="kd">const</span> <span class="nx">checkboxes</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">master</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+    <span class="c1">// detect if target is master</span>
+    <span class="kd">const</span> <span class="nx">targetChecked</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">checked</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="s2">"master-option"</span><span class="p">){</span>
+      <span class="c1">// if it is, check if its status is checked or unchecked</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">targetChecked</span><span class="p">){</span>
+          <span class="c1">// if it's checked now, change everything to true</span>
+          <span class="nx">checkAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">// if it's unchecked now, change all checked statuses to false</span>
+          <span class="nx">uncheckAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// if currentTarget is not master, then it's a member</span>
+        <span class="c1">// if it's checked</span>
+        <span class="kd">let</span> <span class="nx">listState</span> <span class="o">=</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">targetChecked</span><span class="p">){</span>
+          <span class="c1">// Check the state of the list</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">listStatus</span> <span class="o">===</span> <span class="s2">"some"</span><span class="p">){</span>
+            <span class="c1">// If it's "some", change the master's status to indeterminate = true, checked = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">true</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// If it's "all" (the only other option), change the master to checked = true, indeterminate = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">false</span> 
+          <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">//  if it's unchecked</span>
+          <span class="c1">// then check the state of the list</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">listSatus</span> <span class="o">===</span> <span class="s2">"none"</span><span class="p">){</span>
+            <span class="c1">// if it's "none", masters checked = false, indeterminate = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">false</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// if it's "some", master  indeterminate = true, checked = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+          <span class="p">}</span>
+
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>I tried running it, and I got an error in my <code class="highlighter-rouge">getCheckedState</code> function.</p>
+
+<p>It said that <code class="highlighter-rouge">inputList</code> does not have a function <code class="highlighter-rouge">.filter</code>. That’s because it’s nodelist, and I have to convert it to an array. A quick search brought me to <a href="https://stackoverflow.com/questions/32765157/filter-or-map-nodelists-in-es6">this SO page</a> which gives a very simple way. I used the first one. It now looks like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">inputList</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">filteredByChecked</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">inputList</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="s1">'none'</span> <span class="p">:</span>  
+    <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="s1">'all'</span> <span class="p">:</span> <span class="s1">'some'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aaand, now I have a syntax error. <code class="highlighter-rouge">listSatus</code> is not defined. Oh really? Maybe it’s because I don’t want to define it. Maybe it’s because I think <code class="highlighter-rouge">listSatus</code> is unique and doesn’t deserve to be labelled by society. So what?</p>
+
+<p>Ahh, but what’s this? I defined it, and now I’m getting <strong><code class="highlighter-rouge">listStatus</code></strong> is not defined. These guys are really independent minded, sheesh.</p>
+
+<p>Because I called one state and one status.</p>
+
+<p>I’m just going to call all of them state.</p>
+
+<p>So my final code looks like this:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">changeHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="c1">// get all the input children to iterate over later</span>
+    <span class="kd">const</span> <span class="nx">checkboxes</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'input'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">master</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"master-option"</span><span class="p">)</span>
+    <span class="c1">// detect if target is master</span>
+    <span class="kd">const</span> <span class="nx">targetChecked</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">checked</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="s2">"master-option"</span><span class="p">){</span>
+      <span class="c1">// if it is, check if its status is checked or unchecked</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">targetChecked</span><span class="p">){</span>
+          <span class="c1">// if it's checked now, change everything to true</span>
+          <span class="nx">checkAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">// if it's unchecked now, change all checked statuses to false</span>
+          <span class="nx">uncheckAll</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// if currentTarget is not master, then it's a member</span>
+        <span class="c1">// if it's checked</span>
+        <span class="kd">const</span> <span class="nx">listState</span> <span class="o">=</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">checkboxes</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">targetChecked</span><span class="p">){</span>
+          <span class="c1">// Check the state of the list</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">listState</span> <span class="o">===</span> <span class="s2">"some"</span><span class="p">){</span>
+            <span class="c1">// If it's "some", change the master's status to indeterminate = true, checked = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">true</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// If it's "all" (the only other option), change the master to checked = true, indeterminate = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">false</span> 
+          <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">//  if it's unchecked</span>
+          <span class="c1">// then check the state of the list</span>
+          <span class="k">if</span><span class="p">(</span><span class="nx">listState</span> <span class="o">===</span> <span class="s2">"none"</span><span class="p">){</span>
+            <span class="c1">// if it's "none", masters checked = false, indeterminate = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">false</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// if it's "some", master  indeterminate = true, checked = false</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">indeterminate</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nx">master</span><span class="p">.</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span>
+          <span class="p">}</span>
+
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Yes! It works perfectly. Try it out yourself. Wait, are you still here? Hello? Where did you go? You’re not following along? Whatever dude. It works, just trust me.</p>
+
+<p>Here are my user stories:</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />If all of the boxes are unchecked, the box will display as unchecked, and when a user checks it, it and all other boxes will get checked.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />If some are checked and some are unchecked, the box will display as indeterminate and clicking on will check all other boxes and turn it to a check.</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />If all boxes are checked, the box will display as checked, and unchecking it will uncheck everything else.</p>
+  </li>
+</ul>
+
+<p>If you want the full code on github you can find it <a href="https://github.com/joesasson/needless/blob/37338f9f8b445b304e0c32a07722f302860dc817/src/other/clientJs.html">over here</a>. It’s part of a google sheets addon that’s part of a larger project that I’m working on.</p>
+
+<p>To summarize some of the things I’ve learned from this:</p>
+<ul>
+  <li>Nested ternaries can be a good option for a simple nested conditional</li>
+  <li>NodeLists need to be converted to an array before being able to iterate with <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">filter</code>, etc.</li>
+  <li>currentTarget is the node where the handler is attached, target is where the event originated</li>
+  <li>indeterminate state of a checkbox is only stylistic</li>
+  <li>The handler runs after the input’s state is changed, duh</li>
+  <li><code class="highlighter-rouge">getElementById</code> can only be called from <code class="highlighter-rouge">document</code></li>
+</ul>
+
+<p>So while trying to record a video for this article, I realized that I’m actually not done. Instead of the master getting checked when the status changes to “all” from a member, it’s just staying indeterminate.</p>
+
+<p>I ran the debugger, and the <code class="highlighter-rouge">listState</code> is returning “some”. But whhhhyyy?</p>
+
+<p>I got the bug!!</p>
+
+<p>The problem is that I’m checking the filtered list, but that doesn’t include the master, which is now unchecked. It’s like a chicken and egg problem.</p>
+
+<p>So what are my options here?</p>
+
+<p>If I change the comparison to include only the members, that would probably work.</p>
+
+<p>Let me try that.</p>
+
+<p>I need to exclude the master from all of the checks, on both sides of the equation.</p>
+
+<p>I will just add a filter to the end of the chain to remove it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">filteredByChecked</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">inputList</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="s2">"master-option"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Still not working.</p>
+
+<p>Okay, so I realized that the <code class="highlighter-rouge">inputList</code> will never equal the <code class="highlighter-rouge">filteredByChecked</code> because it will always be one less, even if everything is checked.</p>
+
+<p>So I need to change the ternary:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getCheckedState</span><span class="p">(</span><span class="nx">inputList</span><span class="p">){</span>
+  <span class="kd">let</span> <span class="nx">filteredByChecked</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">inputList</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="s2">"master-option"</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="p">?</span> <span class="s1">'none'</span> <span class="p">:</span>  
+    <span class="nx">filteredByChecked</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">inputList</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">?</span> <span class="s1">'all'</span> <span class="p">:</span> <span class="s1">'some'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>And now everything works.</p>
+
+<p>Well, I hope you enjoyed this journey with me. I will try to continue to put these out, because it was a very helpful process for me, and it really helped clarify my thought process. If you liked it and want more, or if you have feedback (or if you catch a mistake somewhere), please let me know in the comments below.</p>
+
+<p>Thank you for reading!</p>
+
+
+  </div><a class="u-url" href="/2019/03/14/vanilla-javascript-select-all-none.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Joe Sasson&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Joe Sasson&#39;s Blog</li><li><a class="u-email" href="mailto:ysasson88@gmail.com">ysasson88@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/joesasson"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">joesasson</span></a></li><li><a href="https://www.twitter.com/thingifly"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">thingifly</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about the music of code and my journey to learn and play it.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
